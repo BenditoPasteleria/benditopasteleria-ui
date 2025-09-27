@@ -1,0 +1,39 @@
+{
+  "name": "nextjs-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .next",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "format": "prettier \"src/**/*.{js,jsx,ts,tsx,json}\" --write",
+    "lint": "next lint",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@next/env": "^15.1.7",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "eslint-config-prettier": "^10.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "postcss": "^8",
+    "prettier": "3.5.1",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
