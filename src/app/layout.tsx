@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { inter, playfair, firaCode } from '@/lib/fonts';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
 	title: 'Bendito Pastelería - Delicias Artesanales',
@@ -27,7 +28,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 			lang="es"
 			className={`${inter.variable} ${playfair.variable} ${firaCode.variable}`}
 		>
-			<body className="min-h-screen gradient-bg">{children}</body>
+			<body className="min-h-screen gradient-bg flex flex-col">
+				<main className="flex-1">{children}</main>
+				<Footer />
+			</body>
 		</html>
 	);
 };
