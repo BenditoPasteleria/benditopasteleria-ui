@@ -20,7 +20,10 @@ const ProductCard = ({
 	};
 
 	return (
-		<div className="card group hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+		<div
+			className="card group hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+			onClick={() => onVerDetalles?.(producto)}
+		>
 			{/* Imagen del producto */}
 			<div className="relative h-48 mb-4 overflow-hidden rounded-lg">
 				<Image
@@ -70,7 +73,10 @@ const ProductCard = ({
 				{/* Botones de acción */}
 				<div className="flex gap-2 pt-2">
 					<button
-						onClick={() => onVerDetalles?.(producto)}
+						onClick={(e) => {
+							e.stopPropagation();
+							onVerDetalles?.(producto);
+						}}
 						className="btn-secondary flex-1 text-sm"
 						disabled={!producto.disponible}
 					>
@@ -78,7 +84,10 @@ const ProductCard = ({
 					</button>
 
 					<button
-						onClick={() => onHacerPedido?.(producto)}
+						onClick={(e) => {
+							e.stopPropagation();
+							onHacerPedido?.(producto);
+						}}
 						className="btn-primary flex-1 text-sm"
 						disabled={!producto.disponible}
 					>

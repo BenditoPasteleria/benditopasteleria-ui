@@ -180,8 +180,7 @@ const ProductModal = ({
 							)}
 
 							{/* Información adicional para pasteles */}
-							{(producto.categoria === 'pasteles-pequenos' ||
-								producto.categoria === 'pasteles-grandes') && (
+							{producto.categoria === 'pasteles' && (
 								<div className="bg-bendito-light/50 p-4 rounded-xl">
 									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
 										💡 Información Importante
@@ -214,12 +213,6 @@ const ProductModal = ({
 									disabled={!producto.disponible}
 								>
 									Hacer Pedido por WhatsApp
-								</button>
-								<button
-									onClick={onClose}
-									className="btn-secondary flex-1 py-3 px-6 text-center"
-								>
-									Cerrar
 								</button>
 							</div>
 
