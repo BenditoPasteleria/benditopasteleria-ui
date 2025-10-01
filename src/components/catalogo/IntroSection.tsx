@@ -1,9 +1,15 @@
+import { useParams } from 'next/navigation';
+import { getMessages } from '@/messages';
+
 const IntroSection = () => {
+	const params = useParams<{ lang: string }>();
+	const lang = params?.lang || 'es';
+	const t = getMessages(lang);
 	return (
 		<div className="card mb-8 sm:mb-12">
 			<div className="text-center mb-6">
 				<h2 className="text-2xl sm:text-3xl font-bold text-bendito-primary mb-4 font-display">
-					Nuestra Filosofía
+					{t.philosophy.title}
 				</h2>
 				<div className="w-24 h-1 bg-bendito-secondary mx-auto rounded-full"></div>
 			</div>
@@ -12,15 +18,21 @@ const IntroSection = () => {
 				{/* Introducción principal */}
 				<div className="text-center">
 					<p className="text-lg sm:text-xl text-bendito-text leading-relaxed font-medium">
-						Queremos crear un pastel único, especial y delicioso para vos. Cada
-						uno de nuestros dulces se elabora de manera completamente{' '}
+						{t.philosophy.mainDescription.split(t.philosophy.artisanal)[0]}
 						<span className="text-bendito-primary font-semibold">
-							artesanal
+							{t.philosophy.artisanal}
 						</span>
-						, priorizando siempre ingredientes de la mejor calidad y respetando
-						los tiempos que cada proceso necesita para que el resultado sea{' '}
-						<span className="text-bendito-primary font-semibold">perfecto</span>
-						.
+						{
+							t.philosophy.mainDescription
+								.split(t.philosophy.artisanal)[1]
+								?.split(t.philosophy.perfect)[0]
+						}
+						<span className="text-bendito-primary font-semibold">
+							{t.philosophy.perfect}
+						</span>
+						{t.philosophy.mainDescription.split(t.philosophy.perfect)[1]
+							? ''
+							: ''}
 					</p>
 				</div>
 
@@ -34,7 +46,7 @@ const IntroSection = () => {
 				{/* Proceso de trabajo */}
 				<div>
 					<h3 className="text-xl font-semibold text-bendito-text mb-4 text-center font-display">
-						Para asegurarnos de lograrlo, necesitamos tu colaboración:
+						{t.philosophy.collaborationTitle}
 					</h3>
 
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -46,15 +58,22 @@ const IntroSection = () => {
 								</div>
 								<div>
 									<h4 className="font-semibold text-bendito-text mb-2 font-display">
-										Anticipación
+										{t.philosophy.anticipation.title}
 									</h4>
 									<p className="text-bendito-text/80 text-sm leading-relaxed">
-										Encargá tu pastel con al menos{' '}
+										{
+											t.philosophy.anticipation.description.split(
+												t.philosophy.anticipation.hours,
+											)[0]
+										}
 										<span className="font-semibold text-bendito-primary">
-											48 horas de anticipación
+											{t.philosophy.anticipation.hours}
 										</span>
-										. Esto nos permite planificar y dedicarle el tiempo que
-										merece.
+										{
+											t.philosophy.anticipation.description.split(
+												t.philosophy.anticipation.hours,
+											)[1]
+										}
 									</p>
 								</div>
 							</div>
@@ -68,15 +87,22 @@ const IntroSection = () => {
 								</div>
 								<div>
 									<h4 className="font-semibold text-bendito-text mb-2 font-display">
-										Preferencias
+										{t.philosophy.preferences.title}
 									</h4>
 									<p className="text-bendito-text/80 text-sm leading-relaxed">
-										Contanos tus gustos y preferencias al hacer el pedido. Así
-										evitamos sabores que no disfrutes y cuidamos cualquier{' '}
+										{
+											t.philosophy.preferences.description.split(
+												t.philosophy.preferences.allergies,
+											)[0]
+										}
 										<span className="font-semibold text-bendito-primary">
-											alergia o restricción alimentaria
+											{t.philosophy.preferences.allergies}
 										</span>
-										.
+										{
+											t.philosophy.preferences.description.split(
+												t.philosophy.preferences.allergies,
+											)[1]
+										}
 									</p>
 								</div>
 							</div>
@@ -90,15 +116,22 @@ const IntroSection = () => {
 								</div>
 								<div>
 									<h4 className="font-semibold text-bendito-text mb-2 font-display">
-										Inspiración
+										{t.philosophy.inspiration.title}
 									</h4>
 									<p className="text-bendito-text/80 text-sm leading-relaxed">
-										Podés compartirnos referencias e inspiraciones (como
-										imágenes de Pinterest), pero{' '}
+										{
+											t.philosophy.inspiration.description.split(
+												t.philosophy.inspiration.noReplicas,
+											)[0]
+										}
 										<span className="font-semibold text-bendito-primary">
-											no realizamos réplicas exactas
+											{t.philosophy.inspiration.noReplicas}
 										</span>
-										: nos gusta crear algo único para vos.
+										{
+											t.philosophy.inspiration.description.split(
+												t.philosophy.inspiration.noReplicas,
+											)[1]
+										}
 									</p>
 								</div>
 							</div>
@@ -112,14 +145,22 @@ const IntroSection = () => {
 								</div>
 								<div>
 									<h4 className="font-semibold text-bendito-text mb-2 font-display">
-										Decoraciones
+										{t.philosophy.decorations.title}
 									</h4>
 									<p className="text-bendito-text/80 text-sm leading-relaxed">
-										Nuestras cubiertas se elaboran principalmente con{' '}
+										{
+											t.philosophy.decorations.description.split(
+												t.philosophy.decorations.buttercream,
+											)[0]
+										}
 										<span className="font-semibold text-bendito-primary">
-											buttercream sabor vainilla
+											{t.philosophy.decorations.buttercream}
 										</span>
-										. También podemos hacerlas con ganache de chocolate.
+										{
+											t.philosophy.decorations.description.split(
+												t.philosophy.decorations.buttercream,
+											)[1]
+										}
 									</p>
 								</div>
 							</div>
@@ -130,15 +171,15 @@ const IntroSection = () => {
 				{/* Cierre inspiracional */}
 				<div className="text-center mt-8 p-6 bg-gradient-to-r from-bendito-primary/10 to-bendito-secondary/10 rounded-xl">
 					<p className="text-lg text-bendito-text font-medium italic">
-						Te agradecemos que nos des la{' '}
+						{/* Para mantener énfasis, se usan spans con partes destacadas */}
+						{t.philosophy.closing.creativeFreedom ? '' : ''}
 						<span className="text-bendito-primary font-semibold">
-							libertad creativa
+							{t.philosophy.closing.creativeFreedom}
 						</span>{' '}
-						para diseñar algo que no solo se vea increíble, sino que también sea{' '}
+						{t.philosophy.closing.memorable ? '' : ''}{' '}
 						<span className="text-bendito-primary font-semibold">
-							memorable al primer bocado
+							{t.philosophy.closing.memorable}
 						</span>
-						.
 					</p>
 				</div>
 			</div>

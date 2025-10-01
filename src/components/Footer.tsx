@@ -1,7 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
+import { getMessages } from '@/messages';
 
 const Footer = () => {
+	const params = useParams<{ lang: string }>();
+	const lang = params?.lang || 'es';
+	const t = getMessages(lang);
 	return (
 		<footer className="bg-bendito-primary text-bendito-secondary mt-16">
 			<div className="max-w-7xl mx-auto px-4 py-12">
@@ -22,38 +29,37 @@ const Footer = () => {
 							</div>
 						</div>
 						<h3 className="text-xl font-bold font-display text-center md:text-left">
-							Bendito Pastelería
+							{t.footer.brandTitle}
 						</h3>
 						<p className="text-bendito-secondary/80 text-sm leading-relaxed text-center md:text-left">
-							Pastelería artesanal donde cada postre es una obra de arte creada
-							con amor e ingredientes de la mejor calidad.
+							{t.footer.brandDescription}
 						</p>
 					</div>
 
 					{/* Enlaces de Navegación */}
 					<div className="space-y-4">
 						<h4 className="text-lg font-semibold font-display text-center md:text-left">
-							Navegación
+							{t.footer.navigation}
 						</h4>
 						<nav className="flex flex-col space-y-2 text-center md:text-left">
 							<Link
-								href="/"
+								href={`/${lang}`}
 								className="text-bendito-secondary/80 hover:text-bendito-secondary transition-colors text-sm"
 							>
-								Inicio
+								{t.footer.home}
 							</Link>
 							<Link
-								href="/catalogo"
+								href={`/${lang}/catalogo`}
 								className="text-bendito-secondary/80 hover:text-bendito-secondary transition-colors text-sm"
 							>
-								Catálogo
+								{t.footer.catalog}
 							</Link>
 							<a
 								href="/catalogo-bendito.pdf"
 								download="catalogo-bendito-pasteleria.pdf"
 								className="text-bendito-secondary/80 hover:text-bendito-secondary transition-colors text-sm"
 							>
-								Descargar PDF
+								{t.footer.downloadPdf}
 							</a>
 						</nav>
 					</div>
@@ -61,7 +67,7 @@ const Footer = () => {
 					{/* Información de Contacto */}
 					<div className="space-y-4">
 						<h4 className="text-lg font-semibold font-display text-center md:text-left">
-							Contacto
+							{t.footer.contact}
 						</h4>
 						<div className="space-y-3 text-center md:text-left">
 							{/* WhatsApp */}
@@ -79,7 +85,7 @@ const Footer = () => {
 									rel="noopener noreferrer"
 									className="text-bendito-secondary/80 hover:text-bendito-secondary transition-colors text-sm font-medium"
 								>
-									WhatsApp
+									{t.footer.whatsapp}
 								</a>
 							</div>
 
@@ -125,35 +131,35 @@ const Footer = () => {
 							<div className="flex items-center justify-center md:justify-start space-x-2">
 								<span className="text-lg">🕒</span>
 								<span className="text-bendito-secondary/80 text-sm">
-									Pedidos con 48h de anticipación
+									{t.footer.orderAdvanceShort}
 								</span>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				{/* Línea separadora */}
-				<div className="border-t border-bendito-secondary/20 mt-8 pt-6">
-					<div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-						<p className="text-bendito-secondary/60 text-xs text-center md:text-left">
-							© 2024 Bendito Pastelería. Todos los derechos reservados.
-						</p>
-						<div className="flex space-x-4">
-							<a
-								href="https://wa.me/674797786"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-bendito-secondary/60 hover:text-bendito-secondary transition-colors text-xs"
-							>
-								WhatsApp
-							</a>
-							<a
-								href="/catalogo-bendito.pdf"
-								download="catalogo-bendito-pasteleria.pdf"
-								className="text-bendito-secondary/60 hover:text-bendito-secondary transition-colors text-xs"
-							>
-								Catálogo PDF
-							</a>
+					{/* Línea separadora */}
+					<div className="border-t border-bendito-secondary/20 mt-8 pt-6">
+						<div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+							<p className="text-bendito-secondary/60 text-xs text-center md:text-left">
+								© 2024 {t.footer.brandTitle}. {t.footer.allRightsReserved}.
+							</p>
+							<div className="flex space-x-4">
+								<a
+									href="https://wa.me/674797786"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-bendito-secondary/60 hover:text-bendito-secondary transition-colors text-xs"
+								>
+									{t.footer.whatsapp}
+								</a>
+								<a
+									href="/catalogo-bendito.pdf"
+									download="catalogo-bendito-pasteleria.pdf"
+									className="text-bendito-secondary/60 hover:text-bendito-secondary transition-colors text-xs"
+								>
+									{t.footer.catalogPdf}
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>

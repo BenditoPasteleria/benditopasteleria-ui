@@ -1,125 +1,73 @@
 'use client';
 
-import { useLanguage } from '@/lib/LanguageContext';
-import { SupportedLanguage } from '@/lib/translations';
+import { useParams, usePathname, useRouter } from 'next/navigation';
+import { createLanguageSwitcher, type Locale } from '@/lib/i18n';
+import Image from 'next/image';
 
-interface LanguageSelectorProps {
-	variant?: 'header' | 'footer' | 'modal';
-	className?: string;
-}
+const languages = [
+	{ code: 'es' as Locale, name: 'Español', flag: '/flags/spain.svg' },
+	{ code: 'en' as Locale, name: 'English', flag: '/flags/usa.svg' },
+	{ code: 'ca' as Locale, name: 'Català', flag: '/flags/catalonia.svg' },
+];
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({
-	variant = 'header',
-	className = '',
-}) => {
-	const { language, setLanguage } = useLanguage();
+export default function LanguageSelector() {
+	const params = useParams();
+	const pathname = usePathname();
+	const router = useRouter();
 
-	const languages = [
-		{ code: 'es' as SupportedLanguage, name: 'Español', flag: '🇪🇸' },
-		{ code: 'en' as SupportedLanguage, name: 'English', flag: '🇬🇧' },
-		{ code: 'ca' as SupportedLanguage, name: 'Català', flag: '🏴󠁥󠁳󠁣󠁴󠁿' },
-	];
+	const currentLocale = params.lang as Locale;
+	const switchLanguage = createLanguageSwitcher();
 
-	const handleLanguageChange = (newLanguage: SupportedLanguage) => {
-		setLanguage(newLanguage);
+	const handleLanguageChange = (newLocale: Locale) => {
+		const newPath = switchLanguage(newLocale, pathname);
+		router.push(newPath);
 	};
 
-	if (variant === 'header') {
-		return (
-			<div className={`relative ${className}`}>
-				<select
-					value={language}
-					onChange={(e) =>
-						handleLanguageChange(e.target.value as SupportedLanguage)
-					}
-					className="bg-white/90 backdrop-blur-sm border border-bendito-light rounded-lg px-3 py-2 text-sm font-medium text-bendito-text focus:ring-2 focus:ring-bendito-primary focus:border-bendito-primary transition-all duration-200 appearance-none cursor-pointer pr-8"
-				>
-					{languages.map((lang) => (
-						<option key={lang.code} value={lang.code}>
-							{lang.flag} {lang.name}
-						</option>
-					))}
-				</select>
-				<div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-					<svg
-						className="w-4 h-4 text-bendito-text/50"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke="currentColor"
-					>
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M19 9l-7 7-7-7"
-						/>
-					</svg>
-				</div>
-			</div>
-		);
-	}
+	const currentLanguage =
+		languages.find((lang) => lang.code === currentLocale) || languages[0];
 
-	if (variant === 'footer') {
-		return (
-			<div className={`flex items-center space-x-2 ${className}`}>
-				<span className="text-sm text-bendito-text/70">Idioma:</span>
-				<div className="flex space-x-1">
-					{languages.map((lang) => (
-						<button
-							key={lang.code}
-							onClick={() => handleLanguageChange(lang.code)}
-							className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
-								language === lang.code
-									? 'bg-bendito-primary text-white'
-									: 'bg-white/50 text-bendito-text hover:bg-bendito-light'
-							}`}
-							title={lang.name}
-						>
-							{lang.flag}
-						</button>
-					))}
-				</div>
-			</div>
-		);
-	}
-
-	// Modal variant
 	return (
-		<div className={`space-y-3 ${className}`}>
-			<h4 className="text-sm font-semibold text-bendito-text">
-				Seleccionar idioma
-			</h4>
-			<div className="space-y-2">
+		<div className="relative">
+			<select
+				value={currentLocale}
+				onChange={(e) => handleLanguageChange(e.target.value as Locale)}
+				className="bg-white border border-bendito-light rounded-lg pl-8 pr-8 py-2 text-sm text-bendito-text focus:outline-none focus:ring-2 focus:ring-bendito-primary focus:border-transparent appearance-none"
+				aria-label="Seleccionar idioma"
+			>
 				{languages.map((lang) => (
-					<button
-						key={lang.code}
-						onClick={() => handleLanguageChange(lang.code)}
-						className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-							language === lang.code
-								? 'bg-bendito-primary text-white'
-								: 'bg-white text-bendito-text hover:bg-bendito-light border border-bendito-light'
-						}`}
-					>
-						<span className="text-lg">{lang.flag}</span>
-						<span>{lang.name}</span>
-						{language === lang.code && (
-							<svg
-								className="w-4 h-4 ml-auto"
-								fill="currentColor"
-								viewBox="0 0 20 20"
-							>
-								<path
-									fillRule="evenodd"
-									d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-									clipRule="evenodd"
-								/>
-							</svg>
-						)}
-					</button>
+					<option key={lang.code} value={lang.code}>
+						{lang.name}
+					</option>
 				))}
+			</select>
+
+			{/* Bandera actual */}
+			<div className="absolute left-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+				<Image
+					src={currentLanguage.flag}
+					alt={`Bandera de ${currentLanguage.name}`}
+					width={20}
+					height={15}
+					className="rounded-sm"
+				/>
+			</div>
+
+			{/* Flecha del dropdown */}
+			<div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
+				<svg
+					className="w-4 h-4 text-bendito-text"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
+						d="M19 9l-7 7-7-7"
+					/>
+				</svg>
 			</div>
 		</div>
 	);
-};
-
-export default LanguageSelector;
+}

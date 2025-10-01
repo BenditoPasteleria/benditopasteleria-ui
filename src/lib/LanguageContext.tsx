@@ -1,16 +1,14 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import {
-	SupportedLanguage,
-	getTranslations,
-	TextTranslations,
-} from '@/lib/translations';
+import { Locale } from '@/lib/translations';
+import { getMessages } from '@/messages';
 
 interface LanguageContextType {
-	language: SupportedLanguage;
-	setLanguage: (language: SupportedLanguage) => void;
-	t: TextTranslations;
+	language: Locale;
+	setLanguage: (language: Locale) => void;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	t: Record<string, any>; // Temporal: usar Record en lugar de any
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
@@ -24,13 +22,11 @@ interface LanguageProviderProps {
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({
 	children,
 }) => {
-	const [language, setLanguage] = useState<SupportedLanguage>('es');
+	const [language, setLanguage] = useState<Locale>('es');
 
 	// Cargar idioma guardado del localStorage al inicializar
 	useEffect(() => {
-		const savedLanguage = localStorage.getItem(
-			'bendito-language',
-		) as SupportedLanguage;
+		const savedLanguage = localStorage.getItem('bendito-language') as Locale;
 		if (savedLanguage && ['es', 'en', 'ca'].includes(savedLanguage)) {
 			setLanguage(savedLanguage);
 		}
@@ -41,7 +37,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
 		localStorage.setItem('bendito-language', language);
 	}, [language]);
 
-	const t = getTranslations(language);
+	const t = getMessages(language);
 
 	const value: LanguageContextType = {
 		language,
@@ -66,7 +62,8 @@ export const useLanguage = (): LanguageContextType => {
 };
 
 // Hook para obtener solo las traducciones
-export const useTranslations = (): TextTranslations => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const useTranslations = (): Record<string, any> => {
 	const { t } = useLanguage();
 	return t;
 };

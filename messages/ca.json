@@ -1,0 +1,94 @@
+{
+	"navigation": {
+		"backToHome": "← Tornar a l'inici",
+		"backToHomeMobile": "← Inici"
+	},
+	"home": {
+		"subtitle": "Pastisseria Artesanal",
+		"welcome": "Benvinguts a",
+		"brandName": "Bendito",
+		"description": ", on cada postres és una obra d'art creada amb amor i els ingredients més frescos. Els nostres pastissos artesanals estan fets a mà amb tècniques tradicionals i un toc modern.",
+		"descriptionSecondary": "Descobreix la nostra selecció de tortes, cupcakes, galetes i més delícies que endolciràn els teus moments especials.",
+		"constructionTitle": "🚧 Lloc en Construcció",
+		"constructionDescription": "Estem treballant per portar-te la millor experiència. Mentrestant, explora el nostre catàleg complet de productes artesanals.",
+		"viewCatalog": "🍰 Veure Catàleg Complet",
+		"contactWhatsApp": "Contactar per WhatsApp"
+	},
+	"catalog": {
+		"title": "El Nostre Catàleg",
+		"description": "Descobreix la nostra selecció completa de postres artesanals. Cada producte està fet amb ingredients frescos i molt amor.",
+		"searchPlaceholder": "Cercar productes per nom o descripció...",
+		"categories": "Categories",
+		"allCategories": "🍰 Tots",
+		"productsFound": "productes trobats",
+		"productFound": "producte trobat",
+		"inCategory": "en",
+		"forTerm": "per",
+		"haveQuestions": "Tens alguna pregunta?",
+		"contactDescription": "Contacta'ns per fer la teva comanda o resoldre qualsevol dubte sobre els nostres productes.",
+		"downloadCatalog": "📄 Descarregar Catàleg PDF"
+	},
+	"philosophy": {
+		"title": "La Nostra Filosofia",
+		"mainDescription": "Volem crear un pastís únic, especial i deliciós per a tu. Cada un dels nostres dolços s'elabora de manera completament artesanal, prioritzant sempre ingredients de la millor qualitat i respectant els temps que cada procés necessita perquè el resultat sigui perfecte.",
+		"artisanal": "artesanal",
+		"perfect": "perfecte",
+		"collaborationTitle": "Per assegurar-nos de aconseguir-ho, necessitem la teva col·laboració:",
+		"anticipation": {
+			"title": "Anticipació",
+			"description": "Encàrrega el teu pastís amb almenys 48 hores d'anticipació. Això ens permet planificar i dedicar-li el temps que mereix.",
+			"hours": "48 hores d'anticipació"
+		},
+		"preferences": {
+			"title": "Preferències",
+			"description": "Explica'ns els teus gustos i preferències en fer la comanda. Així evitem sabors que no gaudeixis i cuidem qualsevol al·lèrgia o restricció alimentària.",
+			"allergies": "al·lèrgia o restricció alimentària"
+		},
+		"inspiration": {
+			"title": "Inspiració",
+			"description": "Pots compartir-nos referències i inspiracions (com imatges de Pinterest), però no fem rèpliques exactes: ens agrada crear alguna cosa única per a tu.",
+			"noReplicas": "no fem rèpliques exactes"
+		},
+		"decorations": {
+			"title": "Decoracions",
+			"description": "Les nostres cobertures s'elaboren principalment amb buttercream de vainilla. També podem fer-les amb ganache de xocolata.",
+			"buttercream": "buttercream de vainilla"
+		},
+		"closing": {
+			"creativeFreedom": "llibertat creativa",
+			"memorable": "memorable al primer mos"
+		}
+	},
+	"products": {
+		"viewDetails": "Veure Detalls",
+		"order": "Comandar",
+		"orderWhatsApp": "Fer Comanda per WhatsApp",
+		"description": "Descripció",
+		"ingredients": "Ingredients",
+		"allergens": "⚠️ Al·lèrgens",
+		"importantInfo": "💡 Informació Important",
+		"orderAdvance": "Comandes amb 48 hores d'anticipació",
+		"buttercream": "buttercream de vainilla",
+		"chocolateGanache": "ganache de xocolata",
+		"noReplicas": "No fem rèpliques exactes",
+		"notAvailable": "⚠️ Aquest producte no està disponible actualment",
+		"featured": "⭐ Destacat",
+		"outOfStock": "Esgotat"
+	},
+	"modal": {
+		"close": "Tancar"
+	},
+	"footer": {
+		"allRightsReserved": "Tots els drets reservats",
+		"brandTitle": "Bendito Pastisseria",
+		"brandDescription": "Pastisseria artesanal on cada postres és una obra d'art creada amb amor i ingredients de la millor qualitat.",
+		"navigation": "Navegació",
+		"home": "Inici",
+		"catalog": "Catàleg",
+		"downloadPdf": "Descarregar PDF",
+		"contact": "Contacte",
+		"orderAdvanceShort": "Comandes amb 48h d'anticipació",
+		"catalogPdf": "Catàleg PDF",
+		"whatsapp": "WhatsApp"
+	}
+}

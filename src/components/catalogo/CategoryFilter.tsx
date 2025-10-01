@@ -1,4 +1,7 @@
+import { useParams } from 'next/navigation';
+import { getMessages } from '@/messages';
 import { Categoria } from '@/types/catalogo';
+import { getTranslatedText, type Locale } from '@/lib/translations';
 
 interface CategoryFilterProps {
 	categorias: Categoria[];
@@ -11,10 +14,13 @@ const CategoryFilter = ({
 	categoriaActiva,
 	onCategoriaChange,
 }: CategoryFilterProps) => {
+	const params = useParams<{ lang: string }>();
+	const lang = (params?.lang || 'es') as Locale;
+	const t = getMessages(lang);
 	return (
 		<div className="mb-8">
 			<h3 className="text-lg font-semibold text-bendito-text mb-4 font-display">
-				Categorías
+				{t.catalog.categories}
 			</h3>
 
 			<div className="flex flex-wrap gap-3">
@@ -27,7 +33,7 @@ const CategoryFilter = ({
 							: 'bg-white text-bendito-text hover:bg-bendito-light border border-bendito-light'
 					}`}
 				>
-					🍰 Todos
+					{t.catalog.allCategories}
 				</button>
 
 				{/* Botones de categorías */}
@@ -41,7 +47,7 @@ const CategoryFilter = ({
 								: 'bg-white text-bendito-text hover:bg-bendito-light border border-bendito-light'
 						}`}
 					>
-						{categoria.icono} {categoria.nombre}
+						{categoria.icono} {getTranslatedText(categoria.nombre, lang)}
 					</button>
 				))}
 			</div>
@@ -50,7 +56,14 @@ const CategoryFilter = ({
 			{categoriaActiva && (
 				<div className="mt-4 p-4 bg-bendito-light rounded-lg">
 					<p className="text-sm text-bendito-text/80">
-						{categorias.find((c) => c.id === categoriaActiva)?.descripcion}
+						{getTranslatedText(
+							categorias.find((c) => c.id === categoriaActiva)?.descripcion || {
+								es: '',
+								ca: '',
+								en: '',
+							},
+							lang,
+						)}
 					</p>
 				</div>
 			)}

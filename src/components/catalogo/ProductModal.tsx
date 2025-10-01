@@ -1,6 +1,13 @@
+import { useParams } from 'next/navigation';
+import { getMessages } from '@/messages';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Producto } from '@/types/catalogo';
+import {
+	getTranslatedText,
+	getTranslatedArray,
+	type Locale,
+} from '@/lib/translations';
 
 interface ProductModalProps {
 	producto: Producto | null;
@@ -15,6 +22,9 @@ const ProductModal = ({
 	onClose,
 	onHacerPedido,
 }: ProductModalProps) => {
+	const params = useParams<{ lang: string }>();
+	const lang = (params?.lang || 'es') as Locale;
+	const t = getMessages(lang);
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
@@ -48,7 +58,7 @@ const ProductModal = ({
 			document.addEventListener('keydown', handleKeyDown);
 			return () => document.removeEventListener('keydown', handleKeyDown);
 		}
-	}, [isOpen]);
+	}, [isOpen, handleKeyDown]);
 
 	const formatearPrecio = (precio: number) => {
 		return new Intl.NumberFormat('es-ES', {
@@ -79,7 +89,7 @@ const ProductModal = ({
 				<div className="sticky top-0 bg-white border-b border-bendito-light px-6 py-4 rounded-t-2xl">
 					<div className="flex items-center justify-between">
 						<h2 className="text-2xl font-bold text-bendito-primary font-display">
-							{producto.nombre}
+							{getTranslatedText(producto.nombre, lang)}
 						</h2>
 						<button
 							onClick={onClose}
@@ -110,13 +120,13 @@ const ProductModal = ({
 							<div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
 								<Image
 									src={producto.imagen}
-									alt={producto.nombre}
+									alt={getTranslatedText(producto.nombre, lang)}
 									fill
 									className="object-cover"
 								/>
 								{producto.destacado && (
 									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
-										⭐ Destacado
+										{t.products.featured}
 									</div>
 								)}
 							</div>
@@ -134,47 +144,51 @@ const ProductModal = ({
 							{/* Descripción */}
 							<div>
 								<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-									Descripción
+									{t.products.description}
 								</h3>
 								<p className="text-bendito-text/80 leading-relaxed">
-									{producto.descripcion}
+									{getTranslatedText(producto.descripcion, lang)}
 								</p>
 							</div>
 
 							{/* Ingredientes */}
-							{producto.ingredientes && producto.ingredientes.length > 0 && (
+							{producto.ingredientes && (
 								<div>
 									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-										Ingredientes
+										{t.products.ingredients}
 									</h3>
 									<div className="flex flex-wrap gap-2">
-										{producto.ingredientes.map((ingrediente, index) => (
-											<span
-												key={index}
-												className="bg-bendito-light text-bendito-text px-3 py-1 rounded-full text-sm"
-											>
-												{ingrediente}
-											</span>
-										))}
+										{getTranslatedArray(producto.ingredientes, lang).map(
+											(ingrediente, index) => (
+												<span
+													key={index}
+													className="bg-bendito-light text-bendito-text px-3 py-1 rounded-full text-sm"
+												>
+													{ingrediente}
+												</span>
+											),
+										)}
 									</div>
 								</div>
 							)}
 
 							{/* Alérgenos */}
-							{producto.alergenos && producto.alergenos.length > 0 && (
+							{producto.alergenos && (
 								<div>
 									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-										⚠️ Alérgenos
+										{t.products.allergens}
 									</h3>
 									<div className="flex flex-wrap gap-2">
-										{producto.alergenos.map((alergeno, index) => (
-											<span
-												key={index}
-												className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
-											>
-												{alergeno}
-											</span>
-										))}
+										{getTranslatedArray(producto.alergenos, lang).map(
+											(alergeno, index) => (
+												<span
+													key={index}
+													className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+												>
+													{alergeno}
+												</span>
+											),
+										)}
 									</div>
 								</div>
 							)}
@@ -183,24 +197,13 @@ const ProductModal = ({
 							{producto.categoria === 'pasteles' && (
 								<div className="bg-bendito-light/50 p-4 rounded-xl">
 									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-										💡 Información Importante
+										{t.products.importantInfo}
 									</h3>
 									<ul className="space-y-2 text-sm text-bendito-text/80">
-										<li>
-											• Pedidos con <strong>48 horas de anticipación</strong>
-										</li>
-										<li>
-											• Cubiertas principalmente con{' '}
-											<strong>buttercream vainilla</strong>
-										</li>
-										<li>
-											• Opción de <strong>ganache de chocolate</strong> (precio
-											puede variar)
-										</li>
-										<li>
-											• <strong>No realizamos réplicas exactas</strong> -
-											creamos algo único para vos
-										</li>
+										<li>• {t.products.orderAdvance}</li>
+										<li>• {t.products.buttercream}</li>
+										<li>• {t.products.chocolateGanache}</li>
+										<li>• {t.products.noReplicas}</li>
 									</ul>
 								</div>
 							)}
@@ -212,7 +215,7 @@ const ProductModal = ({
 									className="btn-primary flex-1 py-3 px-6 text-center"
 									disabled={!producto.disponible}
 								>
-									Hacer Pedido por WhatsApp
+									{t.products.orderWhatsApp}
 								</button>
 							</div>
 
@@ -220,7 +223,7 @@ const ProductModal = ({
 							{!producto.disponible && (
 								<div className="text-center p-4 bg-red-50 border border-red-200 rounded-xl">
 									<p className="text-red-600 font-medium">
-										⚠️ Este producto no está disponible actualmente
+										{t.products.notAvailable}
 									</p>
 								</div>
 							)}
