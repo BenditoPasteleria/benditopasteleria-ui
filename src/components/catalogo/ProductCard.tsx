@@ -35,12 +35,14 @@ const ProductCard = ({
 			onClick={() => onVerDetalles?.(producto)}
 		>
 			{/* Imagen del producto */}
-			<div className="relative h-48 mb-4 overflow-hidden rounded-lg">
+			<div className="relative h-48 sm:h-52 md:h-48 mb-4 overflow-hidden rounded-lg">
 				<Image
 					src={producto.imagen}
 					alt={getTranslatedText(producto.nombre, lang)}
 					fill
 					className="object-cover group-hover:scale-110 transition-transform duration-300"
+					sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+					quality={85}
 				/>
 				{producto.destacado && (
 					<div className="absolute top-2 right-2 bg-bendito-secondary text-white px-2 py-1 rounded-full text-xs font-semibold">
