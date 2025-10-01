@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 
 interface OptimizedImageProps {
 	src: string;
@@ -14,31 +14,7 @@ interface OptimizedImageProps {
 	sizes?: string;
 	onLoad?: () => void;
 	onError?: () => void;
-	placeholder?: 'blur' | 'empty';
-	blurDataURL?: string;
 }
-
-// Genera un blur placeholder simple
-const generateBlurDataURL = (
-	width: number = 10,
-	height: number = 10,
-): string => {
-	const canvas = document.createElement('canvas');
-	canvas.width = width;
-	canvas.height = height;
-	const ctx = canvas.getContext('2d');
-
-	if (ctx) {
-		// Crear un gradiente suave para el blur
-		const gradient = ctx.createLinearGradient(0, 0, width, height);
-		gradient.addColorStop(0, '#f3f4f6');
-		gradient.addColorStop(1, '#e5e7eb');
-		ctx.fillStyle = gradient;
-		ctx.fillRect(0, 0, width, height);
-	}
-
-	return canvas.toDataURL();
-};
 
 export default function OptimizedImage({
 	src,
@@ -51,19 +27,9 @@ export default function OptimizedImage({
 	sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
 	onLoad,
 	onError,
-	placeholder = 'blur',
-	blurDataURL,
 }: OptimizedImageProps) {
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [hasError, setHasError] = useState(false);
-	const [blurPlaceholder, setBlurPlaceholder] = useState<string>('');
-	const imgRef = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		if (placeholder === 'blur' && !blurDataURL) {
-			setBlurPlaceholder(generateBlurDataURL());
-		}
-	}, [placeholder, blurDataURL]);
 
 	const handleLoad = () => {
 		setIsLoaded(true);
@@ -103,7 +69,7 @@ export default function OptimizedImage({
 	}
 
 	return (
-		<div ref={imgRef} className={`relative overflow-hidden ${className}`}>
+		<div className={`relative overflow-hidden ${className}`}>
 			<Image
 				src={src}
 				alt={alt}
@@ -112,8 +78,6 @@ export default function OptimizedImage({
 				quality={quality}
 				priority={priority}
 				sizes={sizes}
-				placeholder={placeholder}
-				blurDataURL={blurDataURL || blurPlaceholder}
 				onLoad={handleLoad}
 				onError={handleError}
 				className={`transition-opacity duration-300 ${

@@ -19,6 +19,7 @@ const nextConfig: NextConfig = {
 		loader: 'default',
 		dangerouslyAllowSVG: true,
 		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+		qualities: [25, 50, 75, 85, 90, 95, 100],
 	},
 
 	// Headers de seguridad, SEO y optimización de imágenes

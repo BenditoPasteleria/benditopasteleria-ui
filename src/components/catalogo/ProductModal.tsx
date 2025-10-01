@@ -130,7 +130,6 @@ const ProductModal = ({
 									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
 									quality={90}
 									priority={true}
-									placeholder="blur"
 								/>
 								{producto.destacado && (
 									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
