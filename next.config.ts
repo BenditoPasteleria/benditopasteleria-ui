@@ -8,13 +8,20 @@ const nextConfig: NextConfig = {
 	// Configuración para archivos estáticos
 	trailingSlash: false,
 
-	// Configuración de imágenes para mejor SEO
+	// Configuración avanzada de imágenes para mejor rendimiento
 	images: {
-		formats: ['image/webp', 'image/avif'],
-		minimumCacheTTL: 60,
+		formats: ['image/avif', 'image/webp'],
+		minimumCacheTTL: 31536000, // 1 año
+		deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+		imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+		domains: [],
+		path: '/_next/image',
+		loader: 'default',
+		dangerouslyAllowSVG: true,
+		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 	},
 
-	// Headers de seguridad y SEO
+	// Headers de seguridad, SEO y optimización de imágenes
 	async headers() {
 		return [
 			{
@@ -31,6 +38,28 @@ const nextConfig: NextConfig = {
 					{
 						key: 'Referrer-Policy',
 						value: 'origin-when-cross-origin',
+					},
+				],
+			},
+			{
+				source: '/images/(.*)',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
+					},
+					{
+						key: 'Vary',
+						value: 'Accept',
+					},
+				],
+			},
+			{
+				source: '/_next/image(.*)',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=31536000, immutable',
 					},
 				],
 			},

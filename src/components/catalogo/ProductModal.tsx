@@ -1,7 +1,7 @@
 import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import { useState, useEffect, useCallback } from 'react';
+import OptimizedImage from '@/components/OptimizedImage';
 import { Producto } from '@/types/catalogo';
 import {
 	getTranslatedText,
@@ -47,11 +47,14 @@ const ProductModal = ({
 		}
 	};
 
-	const handleKeyDown = (e: KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			onClose();
-		}
-	};
+	const handleKeyDown = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				onClose();
+			}
+		},
+		[onClose],
+	);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -118,11 +121,16 @@ const ProductModal = ({
 						{/* Imagen */}
 						<div className="space-y-4">
 							<div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
-								<Image
+								<OptimizedImage
 									src={producto.imagen}
 									alt={getTranslatedText(producto.nombre, lang)}
-									fill
-									className="object-cover"
+									width={600}
+									height={320}
+									className="w-full h-full object-cover"
+									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+									quality={90}
+									priority={true}
+									placeholder="blur"
 								/>
 								{producto.destacado && (
 									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
