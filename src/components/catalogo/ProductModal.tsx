@@ -1,6 +1,6 @@
 import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { Producto } from '@/types/catalogo';
 import {
@@ -47,11 +47,14 @@ const ProductModal = ({
 		}
 	};
 
-	const handleKeyDown = (e: KeyboardEvent) => {
-		if (e.key === 'Escape') {
-			onClose();
-		}
-	};
+	const handleKeyDown = useCallback(
+		(e: KeyboardEvent) => {
+			if (e.key === 'Escape') {
+				onClose();
+			}
+		},
+		[onClose],
+	);
 
 	useEffect(() => {
 		if (isOpen) {

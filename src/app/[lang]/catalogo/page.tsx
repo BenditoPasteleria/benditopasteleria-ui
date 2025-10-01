@@ -10,12 +10,9 @@ import SearchBar from '@/components/catalogo/SearchBar';
 import IntroSection from '@/components/catalogo/IntroSection';
 import ProductModal from '@/components/catalogo/ProductModal';
 import { getMessages } from '@/messages';
-import {
-	catalogoData,
-	getProductosPorCategoria,
-	buscarProductos,
-} from '@/data/catalogo';
+import { catalogoData, getProductosPorCategoria } from '@/data/catalogo';
 import { Producto } from '@/types/catalogo';
+import { getTranslatedText, type Locale } from '@/lib/translations';
 
 const CatalogoPage = () => {
 	const params = useParams<{ lang: string }>();
@@ -35,20 +32,36 @@ const CatalogoPage = () => {
 			productos = getProductosPorCategoria(categoriaActiva);
 		}
 
-		// Filtrar por búsqueda
+		// Filtrar por búsqueda (sobre los productos ya filtrados por categoría)
 		if (terminoBusqueda.trim()) {
-			productos = buscarProductos(terminoBusqueda);
+			productos = productos.filter((producto) => {
+				const terminoLower = terminoBusqueda.toLowerCase();
+				const nombre =
+					typeof producto.nombre === 'string'
+						? producto.nombre
+						: producto.nombre[lang as 'es' | 'ca' | 'en'];
+				const descripcion =
+					typeof producto.descripcion === 'string'
+						? producto.descripcion
+						: producto.descripcion[lang as 'es' | 'ca' | 'en'];
+				return (
+					nombre.toLowerCase().includes(terminoLower) ||
+					descripcion.toLowerCase().includes(terminoLower)
+				);
+			});
 		}
 
 		return productos;
-	}, [categoriaActiva, terminoBusqueda]);
+	}, [categoriaActiva, terminoBusqueda, lang]);
 
 	const handleVerDetalles = (producto: Producto) => {
 		setProductoSeleccionado(producto);
 	};
 
 	const handleHacerPedido = (producto: Producto) => {
-		const mensaje = `Hola! Me interesa pedir: ${producto.nombre} - ${producto.descripcion}`;
+		const nombre = getTranslatedText(producto.nombre, lang as Locale);
+		const descripcion = getTranslatedText(producto.descripcion, lang as Locale);
+		const mensaje = `Hola! Me interesa pedir: ${nombre} - ${descripcion}`;
 		const whatsappUrl = `https://wa.me/674797786?text=${encodeURIComponent(mensaje)}`;
 		window.open(whatsappUrl, '_blank');
 	};
@@ -164,10 +177,11 @@ const CatalogoPage = () => {
 							<>
 								{' '}
 								{t.catalog.inCategory}{' '}
-								{
+								{getTranslatedText(
 									catalogoData.categorias.find((c) => c.id === categoriaActiva)
-										?.nombre
-								}
+										?.nombre || { es: '', ca: '', en: '' },
+									lang as Locale,
+								)}
 							</>
 						)}
 						{terminoBusqueda && (
