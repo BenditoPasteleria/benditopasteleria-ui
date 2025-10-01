@@ -1,0 +1,94 @@
+{
+	"navigation": {
+		"backToHome": "← Volver al inicio",
+		"backToHomeMobile": "← Inicio"
+	},
+	"home": {
+		"subtitle": "Pastelería Artesanal",
+		"welcome": "Bienvenidos a",
+		"brandName": "Bendito",
+		"description": ", donde cada postre es una obra de arte creada con amor y los ingredientes más frescos. Nuestros pasteles artesanales están hechos a mano con técnicas tradicionales y un toque moderno.",
+		"descriptionSecondary": "Descubre nuestra selección de tortas, cupcakes, galletas y más delicias que endulzarán tus momentos especiales.",
+		"constructionTitle": "🚧 Sitio en Construcción",
+		"constructionDescription": "Estamos trabajando para traerte la mejor experiencia. Mientras tanto, explora nuestro catálogo completo de productos artesanales.",
+		"viewCatalog": "🍰 Ver Catálogo Completo",
+		"contactWhatsApp": "Contactar por WhatsApp"
+	},
+	"catalog": {
+		"title": "Nuestro Catálogo",
+		"description": "Descubre nuestra selección completa de postres artesanales. Cada producto está hecho con ingredientes frescos y mucho amor.",
+		"searchPlaceholder": "Buscar productos por nombre o descripción...",
+		"categories": "Categorías",
+		"allCategories": "🍰 Todos",
+		"productsFound": "productos encontrados",
+		"productFound": "producto encontrado",
+		"inCategory": "en",
+		"forTerm": "para",
+		"haveQuestions": "¿Tienes alguna pregunta?",
+		"contactDescription": "Contáctanos para hacer tu pedido o resolver cualquier duda sobre nuestros productos.",
+		"downloadCatalog": "📄 Descargar Catálogo PDF"
+	},
+	"philosophy": {
+		"title": "Nuestra Filosofía",
+		"mainDescription": "Queremos crear un pastel único, especial y delicioso para vos. Cada uno de nuestros dulces se elabora de manera completamente artesanal, priorizando siempre ingredientes de la mejor calidad y respetando los tiempos que cada proceso necesita para que el resultado sea perfecto.",
+		"artisanal": "artesanal",
+		"perfect": "perfecto",
+		"collaborationTitle": "Para asegurarnos de lograrlo, necesitamos tu colaboración:",
+		"anticipation": {
+			"title": "Anticipación",
+			"description": "Encargá tu pastel con al menos 48 horas de anticipación. Esto nos permite planificar y dedicarle el tiempo que merece.",
+			"hours": "48 horas de anticipación"
+		},
+		"preferences": {
+			"title": "Preferencias",
+			"description": "Contanos tus gustos y preferencias al hacer el pedido. Así evitamos sabores que no disfrutes y cuidamos cualquier alergia o restricción alimentaria.",
+			"allergies": "alergia o restricción alimentaria"
+		},
+		"inspiration": {
+			"title": "Inspiración",
+			"description": "Podés compartirnos referencias e inspiraciones (como imágenes de Pinterest), pero no realizamos réplicas exactas: nos gusta crear algo único para vos.",
+			"noReplicas": "no realizamos réplicas exactas"
+		},
+		"decorations": {
+			"title": "Decoraciones",
+			"description": "Nuestras cubiertas se elaboran principalmente con buttercream sabor vainilla. También podemos hacerlas con ganache de chocolate.",
+			"buttercream": "buttercream sabor vainilla"
+		},
+		"closing": {
+			"creativeFreedom": "libertad creativa",
+			"memorable": "memorable al primer bocado"
+		}
+	},
+	"products": {
+		"viewDetails": "Ver Detalles",
+		"order": "Pedir",
+		"orderWhatsApp": "Hacer Pedido por WhatsApp",
+		"description": "Descripción",
+		"ingredients": "Ingredientes",
+		"allergens": "⚠️ Alérgenos",
+		"importantInfo": "💡 Información Importante",
+		"orderAdvance": "Pedidos con 48 horas de anticipación",
+		"buttercream": "buttercream vainilla",
+		"chocolateGanache": "ganache de chocolate",
+		"noReplicas": "No realizamos réplicas exactas",
+		"notAvailable": "⚠️ Este producto no está disponible actualmente",
+		"featured": "⭐ Destacado",
+		"outOfStock": "Agotado"
+	},
+	"modal": {
+		"close": "Cerrar"
+	},
+	"footer": {
+		"allRightsReserved": "Todos los derechos reservados",
+		"brandTitle": "Bendito Pastelería",
+		"brandDescription": "Pastelería artesanal donde cada postre es una obra de arte creada con amor e ingredientes de la mejor calidad.",
+		"navigation": "Navegación",
+		"home": "Inicio",
+		"catalog": "Catálogo",
+		"downloadPdf": "Descargar PDF",
+		"contact": "Contacto",
+		"orderAdvanceShort": "Pedidos con 48h de anticipación",
+		"catalogPdf": "Catálogo PDF",
+		"whatsapp": "WhatsApp"
+	}
+}

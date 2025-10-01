@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 500">
+  <!-- Fondo azul -->
+  <rect width="950" height="500" fill="#B22234"/>
+
+  <!-- Franjas rojas -->
+  <rect width="950" height="38.46" y="0" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="76.92" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="153.84" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="230.76" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="307.68" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="384.6" fill="#FFFFFF"/>
+  <rect width="950" height="38.46" y="461.54" fill="#FFFFFF"/>
+
+  <!-- Cuadro azul con estrellas -->
+  <rect width="380" height="269.23" fill="#3C3B6E"/>
+
+  <!-- Estrellas blancas (simplificadas) -->
+  <g fill="#FFFFFF">
+    <circle cx="50" cy="50" r="8"/>
+    <circle cx="100" cy="50" r="8"/>
+    <circle cx="150" cy="50" r="8"/>
+    <circle cx="200" cy="50" r="8"/>
+    <circle cx="250" cy="50" r="8"/>
+    <circle cx="300" cy="50" r="8"/>
+    <circle cx="350" cy="50" r="8"/>
+
+    <circle cx="75" cy="100" r="8"/>
+    <circle cx="125" cy="100" r="8"/>
+    <circle cx="175" cy="100" r="8"/>
+    <circle cx="225" cy="100" r="8"/>
+    <circle cx="275" cy="100" r="8"/>
+    <circle cx="325" cy="100" r="8"/>
+
+    <circle cx="50" cy="150" r="8"/>
+    <circle cx="100" cy="150" r="8"/>
+    <circle cx="150" cy="150" r="8"/>
+    <circle cx="200" cy="150" r="8"/>
+    <circle cx="250" cy="150" r="8"/>
+    <circle cx="300" cy="150" r="8"/>
+    <circle cx="350" cy="150" r="8"/>
+
+    <circle cx="75" cy="200" r="8"/>
+    <circle cx="125" cy="200" r="8"/>
+    <circle cx="175" cy="200" r="8"/>
+    <circle cx="225" cy="200" r="8"/>
+    <circle cx="275" cy="200" r="8"/>
+    <circle cx="325" cy="200" r="8"/>
+
+    <circle cx="50" cy="250" r="8"/>
+    <circle cx="100" cy="250" r="8"/>
+    <circle cx="150" cy="250" r="8"/>
+    <circle cx="200" cy="250" r="8"/>
+    <circle cx="250" cy="250" r="8"/>
+    <circle cx="300" cy="250" r="8"/>
+    <circle cx="350" cy="250" r="8"/>
+  </g>
+</svg>
