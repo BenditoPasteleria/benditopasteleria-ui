@@ -996,7 +996,7 @@ export const productos: Producto[] = [
 		},
 		precio: 5,
 		categoria: 'alfajores',
-		imagen: '/images/productos/alfajores-frutos-rojos.jpg',
+		imagen: '/images/productos/alfajor-chocolate-dulce-leche.jpg',
 		ingredientes: {
 			es: ['Frutos rojos', 'Dulce de leche', 'Chocolate blanco'],
 			ca: ['Fruits vermells', 'Dolç de llet', 'Xocolata blanca'],
