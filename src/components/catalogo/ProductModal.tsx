@@ -1,7 +1,7 @@
 import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
 import { useState, useEffect, useCallback } from 'react';
-import OptimizedImage from '@/components/OptimizedImage';
+import NextImage from 'next/image';
 import { Producto } from '@/types/catalogo';
 import {
 	getTranslatedText,
@@ -120,16 +120,15 @@ const ProductModal = ({
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 						{/* Imagen */}
 						<div className="space-y-4">
-							<div className="relative h-64 lg:h-80 rounded-xl overflow-hidden">
-								<OptimizedImage
+							<div className="relative h-48 sm:h-64 lg:h-80 rounded-xl overflow-hidden">
+								<NextImage
 									src={producto.imagen}
 									alt={getTranslatedText(producto.nombre, lang)}
-									width={600}
-									height={320}
-									className="w-full h-full object-cover"
-									sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-									quality={90}
+									fill
+									className="object-cover"
+									sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
 									priority={true}
+									quality={90}
 								/>
 								{producto.destacado && (
 									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">

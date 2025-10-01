@@ -1,6 +1,6 @@
 import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
-import OptimizedImage from '@/components/OptimizedImage';
+import Image from 'next/image';
 import { Producto } from '@/types/catalogo';
 import {
 	getTranslatedText,
@@ -35,14 +35,13 @@ const ProductCard = ({
 			onClick={() => onVerDetalles?.(producto)}
 		>
 			{/* Imagen del producto */}
-			<div className="relative h-48 mb-4 overflow-hidden rounded-lg">
-				<OptimizedImage
+			<div className="relative h-48 sm:h-52 md:h-48 mb-4 overflow-hidden rounded-lg">
+				<Image
 					src={producto.imagen}
 					alt={getTranslatedText(producto.nombre, lang)}
-					width={400}
-					height={192}
-					className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					fill
+					className="object-cover group-hover:scale-110 transition-transform duration-300"
+					sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
 					quality={85}
 				/>
 				{producto.destacado && (

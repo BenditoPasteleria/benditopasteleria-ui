@@ -138,14 +138,10 @@ function checkImageOptimization() {
 }
 
 // Ejecutar análisis
-if (require.main === module) {
-	try {
-		analyzeImages();
-		checkImageOptimization();
-	} catch (error) {
-		console.error('❌ Error durante el análisis:', error.message);
-		process.exit(1);
-	}
+try {
+	analyzeImages();
+	checkImageOptimization();
+} catch (error) {
+	console.error('❌ Error durante el análisis:', error.message);
+	process.exit(1);
 }
-
-module.exports = { analyzeImages, checkImageOptimization };
