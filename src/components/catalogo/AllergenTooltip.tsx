@@ -38,13 +38,18 @@ const AllergenTooltip = ({ alergenos, lang }: AllergenTooltipProps) => {
 						<div className="font-semibold mb-2 text-bendito-primary">
 							{t.products.allergens}:
 						</div>
-						<div className="space-y-1">
+						<div className="space-y-1 mb-3">
 							{alergenosList.map((alergeno, index) => (
 								<div key={index} className="flex items-center gap-2">
 									<span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
 									<span className="text-bendito-text/80">{alergeno}</span>
 								</div>
 							))}
+						</div>
+						<div className="pt-2 border-t border-bendito-light">
+							<p className="text-xs text-bendito-text/60 italic">
+								{t.catalog.allergenDisclaimer}
+							</p>
 						</div>
 						{/* Arrow */}
 						<div className="absolute top-full left-1/2 transform -translate-x-1/2">

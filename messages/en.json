@@ -26,7 +26,50 @@
 		"forTerm": "for",
 		"haveQuestions": "Do you have any questions?",
 		"contactDescription": "Contact us to place your order or resolve any questions about our products.",
-		"downloadCatalog": "📄 Download Catalog PDF"
+		"downloadCatalog": "📄 Download Catalog PDF",
+		"howItWorks": "How does it work?",
+		"easyToOrder": "It's very easy to order your favorite products",
+		"pickupMessage": "🛍️ Orders are picked up at our store",
+		"pickupInfo": "All orders are picked up at our store",
+		"pickupAddress": "Orders with 48h advance notice and pickup at store",
+		"storeAddress": "📍 Store address",
+		"getDirections": "Get directions",
+		"modalInstructions": "To confirm your order, write to us on WhatsApp",
+		"modalTiming": "Advance notice: 48h",
+		"modalMultipleProducts": "You can order more products in the same message",
+		"filterActive": "Showing products available for WhatsApp orders",
+		"noResults": "We didn't find products that match your search",
+		"noResultsSuggestion": "Can't find what you're looking for?",
+		"consultAvailability": "Check availability via WhatsApp",
+		"allergenDisclaimer": "Let us know about your allergies when placing your order",
+		"addToOrder": "Add to my order",
+		"viewOrder": "View my order",
+		"clearOrder": "Clear order",
+		"orderSummary": "Order summary",
+		"totalItems": "items in your order",
+		"continueShopping": "Continue shopping",
+		"sendOrder": "Send order via WhatsApp",
+		"copyProduct": "Copy product",
+		"productCopied": "Product copied!",
+		"copyProductTooltip": "Copy product to create your WhatsApp list",
+		"tutorialSteps": {
+			"step1": {
+				"title": "Browse the catalog",
+				"description": "Explore our artisanal products"
+			},
+			"step2": {
+				"title": "Choose what you like",
+				"description": "Select your favorite products"
+			},
+			"step3": {
+				"title": "Order via WhatsApp",
+				"description": "Send your message and confirm your order"
+			},
+			"step4": {
+				"title": "Pick it up at our store",
+				"description": "Come get your order when it's ready"
+			}
+		}
 	},
 	"philosophy": {
 		"title": "Our Philosophy",

@@ -26,7 +26,50 @@
 		"forTerm": "para",
 		"haveQuestions": "¿Tienes alguna pregunta?",
 		"contactDescription": "Contáctanos para hacer tu pedido o resolver cualquier duda sobre nuestros productos.",
-		"downloadCatalog": "📄 Descargar Catálogo PDF"
+		"downloadCatalog": "📄 Descargar Catálogo PDF",
+		"howItWorks": "¿Cómo funciona?",
+		"easyToOrder": "Es muy fácil pedir tus productos favoritos",
+		"pickupMessage": "🛍️ Los pedidos se retiran en nuestro local",
+		"pickupInfo": "Todos los pedidos se retiran en nuestra tienda",
+		"pickupAddress": "Encargos con 48h de anticipación y retiro en local",
+		"storeAddress": "📍 Dirección del local",
+		"getDirections": "Cómo llegar",
+		"modalInstructions": "Para confirmar tu pedido, escríbenos por WhatsApp",
+		"modalTiming": "Tiempo de anticipación: 48h",
+		"modalMultipleProducts": "Puedes pedir más productos en el mismo mensaje",
+		"filterActive": "Mostrando productos disponibles para encargos por WhatsApp",
+		"noResults": "No encontramos productos que coincidan con tu búsqueda",
+		"noResultsSuggestion": "¿No encuentras lo que buscas?",
+		"consultAvailability": "Consultar disponibilidad por WhatsApp",
+		"allergenDisclaimer": "Indícanos tus alergias al hacer el pedido",
+		"addToOrder": "Agregar a mi pedido",
+		"viewOrder": "Ver mi pedido",
+		"clearOrder": "Limpiar pedido",
+		"orderSummary": "Resumen del pedido",
+		"totalItems": "productos en tu pedido",
+		"continueShopping": "Seguir comprando",
+		"sendOrder": "Enviar pedido por WhatsApp",
+		"copyProduct": "Copiar producto",
+		"productCopied": "¡Producto copiado!",
+		"copyProductTooltip": "Copia el producto para armar tu lista en WhatsApp",
+		"tutorialSteps": {
+			"step1": {
+				"title": "Mira el catálogo",
+				"description": "Explora nuestros productos artesanales"
+			},
+			"step2": {
+				"title": "Elige lo que te guste",
+				"description": "Selecciona tus productos favoritos"
+			},
+			"step3": {
+				"title": "Haz tu pedido por WhatsApp",
+				"description": "Envía tu mensaje y confirma tu pedido"
+			},
+			"step4": {
+				"title": "Retíralo en nuestro local",
+				"description": "Ven a buscar tu pedido cuando esté listo"
+			}
+		}
 	},
 	"philosophy": {
 		"title": "Nuestra Filosofía",

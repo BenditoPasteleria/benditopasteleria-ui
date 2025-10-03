@@ -26,7 +26,50 @@
 		"forTerm": "per",
 		"haveQuestions": "Tens alguna pregunta?",
 		"contactDescription": "Contacta'ns per fer la teva comanda o resoldre qualsevol dubte sobre els nostres productes.",
-		"downloadCatalog": "📄 Descarregar Catàleg PDF"
+		"downloadCatalog": "📄 Descarregar Catàleg PDF",
+		"howItWorks": "Com funciona?",
+		"easyToOrder": "És molt fàcil demanar els teus productes favorits",
+		"pickupMessage": "🛍️ Les comandes es recullen al nostre local",
+		"pickupInfo": "Totes les comandes es recullen a la nostra botiga",
+		"pickupAddress": "Encàrrecs amb 48h d'antelació i recollida al local",
+		"storeAddress": "📍 Adreça del local",
+		"getDirections": "Com arribar-hi",
+		"modalInstructions": "Per confirmar la teva comanda, escriu-nos per WhatsApp",
+		"modalTiming": "Temps d'antelació: 48h",
+		"modalMultipleProducts": "Pots demanar més productes en el mateix missatge",
+		"filterActive": "Mostrant productes disponibles per comandes per WhatsApp",
+		"noResults": "No hem trobat productes que coincideixin amb la teva cerca",
+		"noResultsSuggestion": "No trobes el que busques?",
+		"consultAvailability": "Consultar disponibilitat per WhatsApp",
+		"allergenDisclaimer": "Indica'ns les teves al·lèrgies en fer la comanda",
+		"addToOrder": "Afegir a la meva comanda",
+		"viewOrder": "Veure la meva comanda",
+		"clearOrder": "Netejar comanda",
+		"orderSummary": "Resum de la comanda",
+		"totalItems": "productes a la teva comanda",
+		"continueShopping": "Continuar comprant",
+		"sendOrder": "Enviar comanda per WhatsApp",
+		"copyProduct": "Copiar producte",
+		"productCopied": "Producte copiat!",
+		"copyProductTooltip": "Copia el producte per armar la teva llista a WhatsApp",
+		"tutorialSteps": {
+			"step1": {
+				"title": "Mira el catàleg",
+				"description": "Explora els nostres productes artesanals"
+			},
+			"step2": {
+				"title": "Tria el que t'agradi",
+				"description": "Selecciona els teus productes favorits"
+			},
+			"step3": {
+				"title": "Fes la teva comanda per WhatsApp",
+				"description": "Envia el teu missatge i confirma la comanda"
+			},
+			"step4": {
+				"title": "Recull-lo al nostre local",
+				"description": "Vine a buscar la teva comanda quan estigui llesta"
+			}
+		}
 	},
 	"philosophy": {
 		"title": "La Nostra Filosofia",
