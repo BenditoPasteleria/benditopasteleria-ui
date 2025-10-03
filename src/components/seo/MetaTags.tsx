@@ -21,8 +21,10 @@ const MetaTags = ({ producto, lang, baseUrl }: MetaTagsProps) => {
 		const descripcion = getTranslatedText(producto.descripcion, lang);
 		const ingredientes = producto.ingredientes
 			? typeof producto.ingredientes === 'string'
-				? producto.ingredientes.split(', ')
-				: producto.ingredientes[lang] || producto.ingredientes.es
+				? (producto.ingredientes as string).split(', ')
+				: Array.isArray(producto.ingredientes)
+					? producto.ingredientes
+					: producto.ingredientes[lang] || producto.ingredientes.es
 			: [];
 
 		title = `${nombre} - Bendito Pastelería`;

@@ -12,8 +12,10 @@ const ProductSchema = ({ producto, lang, baseUrl }: ProductSchemaProps) => {
 	const descripcion = getTranslatedText(producto.descripcion, lang);
 	const ingredientes = producto.ingredientes
 		? typeof producto.ingredientes === 'string'
-			? producto.ingredientes.split(', ')
-			: producto.ingredientes[lang] || producto.ingredientes.es
+			? (producto.ingredientes as string).split(', ')
+			: Array.isArray(producto.ingredientes)
+				? producto.ingredientes
+				: producto.ingredientes[lang] || producto.ingredientes.es
 		: [];
 
 	const schema = {
@@ -51,14 +53,18 @@ const ProductSchema = ({ producto, lang, baseUrl }: ProductSchemaProps) => {
 	if (producto.alergenos) {
 		const alergenos =
 			typeof producto.alergenos === 'string'
-				? producto.alergenos.split(', ')
-				: producto.alergenos[lang] || producto.alergenos.es;
+				? (producto.alergenos as string).split(', ')
+				: Array.isArray(producto.alergenos)
+					? producto.alergenos
+					: producto.alergenos[lang] || producto.alergenos.es;
 
-		schema['additionalProperty'] = alergenos.map((alergeno) => ({
-			'@type': 'PropertyValue',
-			name: 'Allergen',
-			value: alergeno,
-		}));
+		(schema as Record<string, unknown>)['additionalProperty'] = alergenos.map(
+			(alergeno) => ({
+				'@type': 'PropertyValue',
+				name: 'Allergen',
+				value: alergeno,
+			}),
+		);
 	}
 
 	return (

@@ -1,6 +1,6 @@
 import { catalogoData } from '@/data/catalogo';
 
-export async function generateSitemap() {
+async function generateSitemap() {
 	const baseUrl = 'https://benditopasteleria.com';
 	const languages = ['es', 'ca', 'en'];
 

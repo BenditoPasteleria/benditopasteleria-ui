@@ -878,7 +878,7 @@ export const productos: Producto[] = [
 		},
 		precio: 50,
 		categoria: 'postres',
-		imagen: '/images/productos/cheesecake-pistacho.jpeg',
+		imagen: '/images/productos/cheesecake-pistacho.jpg',
 		ingredientes: {
 			es: ['Base de galleta', 'Crema de queso', 'Pistacho'],
 			ca: ['Base de galeta', 'Crema de formatge', 'Pistatxo'],
@@ -909,7 +909,7 @@ export const productos: Producto[] = [
 		},
 		precio: 4,
 		categoria: 'alfajores',
-		imagen: '/images/productos/alfajores-maicena.jpg',
+		imagen: '/images/productos/alfajor-maicena.jpg',
 		ingredientes: {
 			es: ['Maicena', 'Dulce de leche', 'Coco rallado'],
 			ca: ['Maicena', 'Dolç de llet', 'Coco ratllat'],
@@ -1027,7 +1027,7 @@ export const productos: Producto[] = [
 		},
 		precio: 3.5,
 		categoria: 'cookies',
-		imagen: '/images/productos/cookies.jpg',
+		imagen: '/images/productos/cookie-limon-amapolas.jpg',
 		ingredientes: {
 			es: ['Harina', 'Limón', 'Amapolas', 'Mantequilla'],
 			ca: ['Farina', 'Llimona', 'Roselles', 'Mantega'],
@@ -1056,7 +1056,7 @@ export const productos: Producto[] = [
 		},
 		precio: 3.5,
 		categoria: 'cookies',
-		imagen: '/images/productos/cookies.jpg',
+		imagen: '/images/productos/cookie-avena-chips.jpg',
 		ingredientes: {
 			es: ['Avena', 'Chips de chocolate', 'Harina', 'Mantequilla'],
 			ca: ['Civada', 'Chips de xocolata', 'Farina', 'Mantega'],
@@ -1114,7 +1114,7 @@ export const productos: Producto[] = [
 		},
 		precio: 4.5,
 		categoria: 'cookies',
-		imagen: '/images/productos/cookies.jpg',
+		imagen: '/images/productos/cookie-chocolate-nuez.jpg',
 		ingredientes: {
 			es: ['Harina', 'Chocolate', 'Nuez', 'Mantequilla'],
 			ca: ['Farina', 'Xocolata', 'Nous', 'Mantega'],
@@ -1143,7 +1143,7 @@ export const productos: Producto[] = [
 		},
 		precio: 4.5,
 		categoria: 'cookies',
-		imagen: '/images/productos/cookies.jpg',
+		imagen: '/images/productos/cookie-pistacho.jpg',
 		ingredientes: {
 			es: ['Harina', 'Pistacho', 'Mantequilla'],
 			ca: ['Farina', 'Pistatxo', 'Mantega'],
@@ -1308,35 +1308,6 @@ export const productos: Producto[] = [
 
 	// MEDIALUNAS
 	{
-		id: 'medialuna-unidad',
-		nombre: {
-			es: 'Medialuna',
-			ca: 'Croissant',
-			en: 'Croissant',
-		},
-		descripcion: {
-			es: 'Medialuna artesanal individual',
-			ca: 'Croissant artesanal individual',
-			en: 'Individual artisanal croissant',
-		},
-		precio: 2.5,
-		categoria: 'medialunas',
-		imagen: '/images/productos/medialunas.jpg',
-		ingredientes: {
-			es: ['Harina', 'Mantequilla', 'Levadura', 'Huevos', 'Azúcar'],
-			ca: ['Farina', 'Mantega', 'Llevat', 'Ous', 'Sucre'],
-			en: ['Flour', 'Butter', 'Yeast', 'Eggs', 'Sugar'],
-		},
-		alergenos: {
-			es: ['Gluten', 'Huevos', 'Lácteos'],
-			ca: ['Gluten', 'Ous', 'Làctics'],
-			en: ['Gluten', 'Eggs', 'Dairy'],
-		},
-		disponible: true,
-		destacado: false,
-		orden: 37,
-	},
-	{
 		id: 'medialunas-x6',
 		nombre: {
 			es: 'Medialunas x 6',
@@ -1363,39 +1334,10 @@ export const productos: Producto[] = [
 		},
 		disponible: true,
 		destacado: true,
-		orden: 38,
+		orden: 37,
 	},
 
 	// MACARONS
-	{
-		id: 'macaron-unidad-individual',
-		nombre: {
-			es: 'Macaron',
-			ca: 'Macaron',
-			en: 'Macaron',
-		},
-		descripcion: {
-			es: 'Macaron artesanal individual',
-			ca: 'Macaron artesanal individual',
-			en: 'Individual artisanal macaron',
-		},
-		precio: 3.5,
-		categoria: 'macarons',
-		imagen: '/images/productos/macaron-individual.jpg',
-		ingredientes: {
-			es: ['Almendras', 'Azúcar', 'Claras de huevo', 'Colorantes naturales'],
-			ca: ['Ametlles', 'Sucre', "Clares d'ou", 'Colorants naturals'],
-			en: ['Almonds', 'Sugar', 'Egg whites', 'Natural colorants'],
-		},
-		alergenos: {
-			es: ['Huevos', 'Frutos secos'],
-			ca: ['Ous', 'Fruits secs'],
-			en: ['Eggs', 'Nuts'],
-		},
-		disponible: true,
-		destacado: false,
-		orden: 39,
-	},
 	{
 		id: 'macarons-x6',
 		nombre: {
@@ -1408,7 +1350,7 @@ export const productos: Producto[] = [
 			ca: 'Pack de 6 macarons artesanals',
 			en: 'Pack of 6 artisanal macarons',
 		},
-		precio: 20,
+		precio: 21,
 		categoria: 'macarons',
 		imagen: '/images/productos/macarons.jpg',
 		ingredientes: {
@@ -1423,7 +1365,7 @@ export const productos: Producto[] = [
 		},
 		disponible: true,
 		destacado: true,
-		orden: 40,
+		orden: 38,
 	},
 ];
 
