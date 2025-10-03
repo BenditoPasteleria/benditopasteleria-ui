@@ -4,14 +4,12 @@ import ProductCard from './ProductCard';
 interface ProductGridProps {
 	productos: Producto[];
 	onVerDetalles?: (producto: Producto) => void;
-	onHacerPedido?: (producto: Producto) => void;
 	loading?: boolean;
 }
 
 const ProductGrid = ({
 	productos,
 	onVerDetalles,
-	onHacerPedido,
 	loading = false,
 }: ProductGridProps) => {
 	if (loading) {
@@ -67,7 +65,6 @@ const ProductGrid = ({
 					key={producto.id}
 					producto={producto}
 					onVerDetalles={onVerDetalles}
-					onHacerPedido={onHacerPedido}
 				/>
 			))}
 		</div>

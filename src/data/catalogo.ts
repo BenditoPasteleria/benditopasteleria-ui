@@ -404,7 +404,7 @@ export const productos: Producto[] = [
 		},
 		precio: 35,
 		categoria: 'postres',
-		imagen: '/images/productos/rogel.jpeg',
+		imagen: '/images/productos/rogel.jpg',
 		ingredientes: {
 			es: ['Masa fina crocante', 'Dulce de leche', 'Merengue italiano'],
 			ca: ['Massa fina cruixent', 'Dolç de llet', 'Merengue italià'],

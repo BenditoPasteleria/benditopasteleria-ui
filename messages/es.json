@@ -73,7 +73,8 @@
 		"noReplicas": "No realizamos réplicas exactas",
 		"notAvailable": "⚠️ Este producto no está disponible actualmente",
 		"featured": "⭐ Destacado",
-		"outOfStock": "Agotado"
+		"outOfStock": "Agotado",
+		"containsAllergens": "Contiene alérgenos"
 	},
 	"modal": {
 		"close": "Cerrar"

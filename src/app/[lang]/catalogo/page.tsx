@@ -204,7 +204,6 @@ const CatalogoPage = () => {
 				<ProductGrid
 					productos={productosFiltrados}
 					onVerDetalles={handleVerDetalles}
-					onHacerPedido={handleHacerPedido}
 				/>
 			</main>
 

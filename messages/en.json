@@ -73,7 +73,8 @@
 		"noReplicas": "We don't make exact replicas",
 		"notAvailable": "⚠️ This product is not currently available",
 		"featured": "⭐ Featured",
-		"outOfStock": "Out of Stock"
+		"outOfStock": "Out of Stock",
+		"containsAllergens": "Contains allergens"
 	},
 	"modal": {
 		"close": "Close"

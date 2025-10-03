@@ -2,23 +2,15 @@ import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
 import Image from 'next/image';
 import { Producto } from '@/types/catalogo';
-import {
-	getTranslatedText,
-	getTranslatedArray,
-	type Locale,
-} from '@/lib/translations';
+import { getTranslatedText, type Locale } from '@/lib/translations';
+import AllergenTooltip from './AllergenTooltip';
 
 interface ProductCardProps {
 	producto: Producto;
 	onVerDetalles?: (producto: Producto) => void;
-	onHacerPedido?: (producto: Producto) => void;
 }
 
-const ProductCard = ({
-	producto,
-	onVerDetalles,
-	onHacerPedido,
-}: ProductCardProps) => {
+const ProductCard = ({ producto, onVerDetalles }: ProductCardProps) => {
 	const params = useParams<{ lang: string }>();
 	const lang = (params?.lang || 'es') as Locale;
 	const t = getMessages(lang);
@@ -31,7 +23,7 @@ const ProductCard = ({
 
 	return (
 		<div
-			className="card group hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer"
+			className="card group hover:shadow-2xl transition-all duration-300 transform hover:scale-105 cursor-pointer flex flex-col"
 			onClick={() => onVerDetalles?.(producto)}
 		>
 			{/* Imagen del producto */}
@@ -59,55 +51,30 @@ const ProductCard = ({
 			</div>
 
 			{/* Información del producto */}
-			<div className="space-y-3">
+			<div className="space-y-3 flex-1 flex flex-col">
 				<h3 className="text-lg font-semibold text-bendito-text font-display">
 					{getTranslatedText(producto.nombre, lang)}
 				</h3>
 
-				<p className="text-sm text-bendito-text/70 line-clamp-2">
-					{getTranslatedText(producto.descripcion, lang)}
-				</p>
+				<div className="space-y-3">
+					<p className="text-sm text-bendito-text/70 line-clamp-2">
+						{getTranslatedText(producto.descripcion, lang)}
+					</p>
 
-				{/* Precio */}
-				<div className="flex items-center justify-between mb-3">
-					<span className="text-xl font-bold text-bendito-primary">
-						{formatearPrecio(producto.precio)}
-					</span>
-				</div>
-
-				{/* Alérgenos */}
-				{producto.alergenos && (
-					<div className="mb-3">
-						<div className="text-xs text-bendito-text/60 bg-red-50 px-2 py-1 rounded">
-							⚠️ {getTranslatedArray(producto.alergenos, lang).join(', ')}
+					{/* Alérgenos con tooltip - siempre pegado a la descripción */}
+					{producto.alergenos && (
+						<div>
+							<AllergenTooltip alergenos={producto.alergenos} lang={lang} />
 						</div>
-					</div>
-				)}
-
-				{/* Botones de acción */}
-				<div className="flex gap-2 pt-2">
-					<button
-						onClick={(e) => {
-							e.stopPropagation();
-							onVerDetalles?.(producto);
-						}}
-						className="btn-secondary flex-1 text-sm"
-						disabled={!producto.disponible}
-					>
-						{t.products.viewDetails}
-					</button>
-
-					<button
-						onClick={(e) => {
-							e.stopPropagation();
-							onHacerPedido?.(producto);
-						}}
-						className="btn-primary flex-1 text-sm"
-						disabled={!producto.disponible}
-					>
-						{t.products.order}
-					</button>
+					)}
 				</div>
+			</div>
+
+			{/* Footer con precio - Esquina inferior derecha */}
+			<div className="flex justify-end items-end pt-3 border-t border-bendito-light mt-auto">
+				<span className="text-xl font-bold text-bendito-primary">
+					{formatearPrecio(producto.precio)}
+				</span>
 			</div>
 		</div>
 	);

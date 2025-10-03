@@ -73,7 +73,8 @@
 		"noReplicas": "No fem rèpliques exactes",
 		"notAvailable": "⚠️ Aquest producte no està disponible actualment",
 		"featured": "⭐ Destacat",
-		"outOfStock": "Esgotat"
+		"outOfStock": "Esgotat",
+		"containsAllergens": "Conté al·lèrgens"
 	},
 	"modal": {
 		"close": "Tancar"
