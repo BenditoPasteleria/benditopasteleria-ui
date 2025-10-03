@@ -13,6 +13,7 @@ import { getMessages } from '@/messages';
 import { catalogoData, getProductosPorCategoria } from '@/data/catalogo';
 import { Producto } from '@/types/catalogo';
 import { getTranslatedText, type Locale } from '@/lib/translations';
+import CatalogSchema from '@/components/seo/CatalogSchema';
 
 const CatalogoPage = () => {
 	const params = useParams<{ lang: string }>();
@@ -72,6 +73,12 @@ const CatalogoPage = () => {
 
 	return (
 		<div className="min-h-screen gradient-bg">
+			{/* Schema Markup para SEO */}
+			<CatalogSchema
+				lang={lang as Locale}
+				baseUrl="https://benditopasteleria.com"
+			/>
+
 			{/* Header - Responsive */}
 			<header className="bg-white/90 backdrop-blur-sm shadow-sm border-b border-bendito-light">
 				<div className="w-full px-3 sm:px-4 py-3 sm:py-6">

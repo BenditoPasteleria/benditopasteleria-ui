@@ -8,6 +8,7 @@ import {
 	getTranslatedArray,
 	type Locale,
 } from '@/lib/translations';
+import ProductSchema from '@/components/seo/ProductSchema';
 
 interface ProductModalProps {
 	producto: Producto | null;
@@ -81,6 +82,13 @@ const ProductModal = ({
 		>
 			{/* Backdrop */}
 			<div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+			{/* Schema Markup para SEO */}
+			<ProductSchema
+				producto={producto}
+				lang={lang}
+				baseUrl="https://benditopasteleria.com"
+			/>
 
 			{/* Modal Content */}
 			<div

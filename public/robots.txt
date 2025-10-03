@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://benditopasteleria.com/sitemap.xml
+
+# Crawl-delay para ser respetuosos
+Crawl-delay: 1
+
+# Permitir acceso a recursos estáticos
+Allow: /images/
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /logo-bendito.svg
+Allow: /logo-bendito-minimal.svg
+
+# Bloquear archivos de desarrollo
+Disallow: /_next/
+Disallow: /api/
+Disallow: /scripts/
+Disallow: /.env*
+
+# Permitir todas las páginas de idiomas
+Allow: /es/
+Allow: /ca/
+Allow: /en/
