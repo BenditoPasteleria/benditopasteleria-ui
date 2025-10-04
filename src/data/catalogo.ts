@@ -5,9 +5,9 @@ export const categorias: Categoria[] = [
 	{
 		id: 'pasteles',
 		nombre: {
-			es: 'Pasteles',
-			ca: 'Pastissos',
-			en: 'Cakes',
+			es: 'Tortas y Pasteles',
+			ca: 'Tortes i Pastissos',
+			en: 'Cakes and Tortes',
 		},
 		descripcion: {
 			es: 'Bizcochuelos de vainilla o chocolate con rellenos y temáticas personalizadas',
@@ -21,9 +21,9 @@ export const categorias: Categoria[] = [
 	{
 		id: 'extras-pasteles',
 		nombre: {
-			es: 'Extras para Pasteles',
-			ca: 'Extres per Pastissos',
-			en: 'Cake Extras',
+			es: 'Extras',
+			ca: 'Extres',
+			en: 'Extras',
 		},
 		descripcion: {
 			es: 'Macarons y efectos especiales para decorar tus pasteles',
@@ -138,32 +138,32 @@ export const productos: Producto[] = [
 	{
 		id: 'pastel-pequeno-12cm',
 		nombre: {
-			es: 'Pastel Pequeño - Diámetro 12 cm',
-			ca: 'Pastís Petit - Diàmetre 12 cm',
-			en: 'Small Cake - 12 cm Diameter',
+			es: 'Pastel pequeño (12 cm)',
+			ca: 'Pastís petit (12 cm)',
+			en: 'Small Cake (12 cm)',
 		},
 		descripcion: {
-			es: 'Bizcochuelo: vainilla o chocolate. Relleno: dulce de leche, ganache chocolate semiamargo, ganache chocolate blanco, ganache de frutos rojos, crema oreo, chantilly + fruta. Temática: color + detalle (texto, dibujo)',
-			ca: 'Pa de pessic: vainilla o xocolata. Farcit: dolç de llet, ganache xocolata semiamarg, ganache xocolata blanc, ganache de fruits vermells, crema oreo, chantilly + fruita. Temàtica: color + detall (text, dibuix)',
-			en: 'Sponge cake: vanilla or chocolate. Filling: dulce de leche, semi-sweet chocolate ganache, white chocolate ganache, red fruits ganache, oreo cream, chantilly + fruit. Theme: color + detail (text, drawing)',
+			es: 'Dos capas de bizcochuelo de vainilla o chocolate con un relleno a elección. Decorado con temática personalizada en color y detalle.',
+			ca: 'Dues capes de pa de pessic de vainilla o xocolata amb un farcit a elecció. Decorat amb temàtica personalitzada en color i detall.',
+			en: 'Two layers of vanilla or chocolate sponge cake with one filling of choice. Decorated with personalized theme in color and detail.',
 		},
 		precio: 35,
 		categoria: 'pasteles',
-		imagen: '/images/productos/pastel-1.jpg',
+		imagen: '/images/productos/pastel-pequeno-12cm.jpg',
 		ingredientes: {
 			es: [
-				'Bizcochuelo de vainilla o chocolate',
-				'Relleno a elección',
+				'Dos capas de bizcochuelo de vainilla o chocolate',
+				'Un relleno a elección',
 				'Temática personalizada',
 			],
 			ca: [
-				'Pa de pessic de vainilla o xocolata',
-				'Farcit a elecció',
+				'Dues capes de pa de pessic de vainilla o xocolata',
+				'Un farcit a elecció',
 				'Temàtica personalitzada',
 			],
 			en: [
-				'Vanilla or chocolate sponge cake',
-				'Filling of choice',
+				'Two layers of vanilla or chocolate sponge cake',
+				'One filling of choice',
 				'Personalized theme',
 			],
 		},
@@ -179,32 +179,32 @@ export const productos: Producto[] = [
 	{
 		id: 'pastel-pequeno-16cm',
 		nombre: {
-			es: 'Pastel Pequeño - Diámetro 16 cm',
-			ca: 'Pastís Petit - Diàmetre 16 cm',
+			es: 'Pastel pequeño (16 cm)',
+			ca: 'Pastís petit (16 cm)',
 			en: 'Small Cake - 16 cm Diameter',
 		},
 		descripcion: {
-			es: 'Bizcochuelo: vainilla o chocolate. Relleno: dulce de leche, ganache chocolate semiamargo, ganache chocolate blanco, ganache de frutos rojos, crema oreo, chantilly + fruta. Temática: color + detalle (texto, dibujo)',
-			ca: 'Pa de pessic: vainilla o xocolata. Farcit: dolç de llet, ganache xocolata semiamarg, ganache xocolata blanc, ganache de fruits vermells, crema oreo, chantilly + fruita. Temàtica: color + detall (text, dibuix)',
-			en: 'Sponge cake: vanilla or chocolate. Filling: dulce de leche, semi-sweet chocolate ganache, white chocolate ganache, red fruits ganache, oreo cream, chantilly + fruit. Theme: color + detail (text, drawing)',
+			es: 'Dos capas de bizcochuelo de vainilla o chocolate con un relleno a elección. Decorado con temática personalizada en color y detalle.',
+			ca: 'Dues capes de pa de pessic de vainilla o xocolata amb un farcit a elecció. Decorat amb temàtica personalitzada en color i detall.',
+			en: 'Two layers of vanilla or chocolate sponge cake with one filling of choice. Decorated with personalized theme in color and detail.',
 		},
 		precio: 55,
 		categoria: 'pasteles',
-		imagen: '/images/productos/pastel-2.jpg',
+		imagen: '/images/productos/pastel-pequeno-16cm.jpg',
 		ingredientes: {
 			es: [
-				'Bizcochuelo de vainilla o chocolate',
-				'Relleno a elección',
+				'Dos capas de bizcochuelo de vainilla o chocolate',
+				'Un relleno a elección',
 				'Temática personalizada',
 			],
 			ca: [
-				'Pa de pessic de vainilla o xocolata',
-				'Farcit a elecció',
+				'Dues capes de pa de pessic de vainilla o xocolata',
+				'Un farcit a elecció',
 				'Temàtica personalitzada',
 			],
 			en: [
-				'Vanilla or chocolate sponge cake',
-				'Filling of choice',
+				'Two layers of vanilla or chocolate sponge cake',
+				'One filling of choice',
 				'Personalized theme',
 			],
 		},
@@ -220,31 +220,31 @@ export const productos: Producto[] = [
 	{
 		id: 'pastel-grande-16cm',
 		nombre: {
-			es: 'Pastel Grande - Diámetro 16 cm',
-			ca: 'Pastís Gran - Diàmetre 16 cm',
-			en: 'Large Cake - 16 cm Diameter',
+			es: 'Pastel grande (16 cm)',
+			ca: 'Pastís gran (16 cm)',
+			en: 'Large Cake (16 cm)',
 		},
 		descripcion: {
-			es: 'Bizcochuelo: vainilla o chocolate. Relleno: dulce de leche, ganache chocolate semiamargo, ganache chocolate blanco, ganache de frutos rojos, crema oreo, chantilly + fruta. Temática: color + detalle (texto, dibujo)',
-			ca: 'Pa de pessic: vainilla o xocolata. Farcit: dolç de llet, ganache xocolata semiamarg, ganache xocolata blanc, ganache de fruits vermells, crema oreo, chantilly + fruita. Temàtica: color + detall (text, dibuix)',
-			en: 'Sponge cake: vanilla or chocolate. Filling: dulce de leche, semi-sweet chocolate ganache, white chocolate ganache, red fruits ganache, oreo cream, chantilly + fruit. Theme: color + detail (text, drawing)',
+			es: 'Tres capas de bizcochuelo de vainilla o chocolate con dos rellenos a elección. Decorado con temática personalizada en color y detalle.',
+			ca: 'Tres capes de pa de pessic de vainilla o xocolata amb dos farcits a elecció. Decorat amb temàtica personalitzada en color i detall.',
+			en: 'Three layers of vanilla or chocolate sponge cake with two fillings of choice. Decorated with personalized theme in color and detail.',
 		},
 		precio: 85,
 		categoria: 'pasteles',
-		imagen: '/images/productos/pastel-3.jpg',
+		imagen: '/images/productos/pastel-grande-16cm.jpg',
 		ingredientes: {
 			es: [
-				'Bizcochuelo de vainilla o chocolate',
+				'Tres capas de bizcochuelo de vainilla o chocolate',
 				'Dos rellenos a elección',
 				'Temática personalizada',
 			],
 			ca: [
-				'Pa de pessic de vainilla o xocolata',
+				'Tres capes de pa de pessic de vainilla o xocolata',
 				'Dos farcits a elecció',
 				'Temàtica personalitzada',
 			],
 			en: [
-				'Vanilla or chocolate sponge cake',
+				'Three layers of vanilla or chocolate sponge cake',
 				'Two fillings of choice',
 				'Personalized theme',
 			],
@@ -261,31 +261,31 @@ export const productos: Producto[] = [
 	{
 		id: 'pastel-grande-20cm',
 		nombre: {
-			es: 'Pastel Grande - Diámetro 20 cm',
-			ca: 'Pastís Gran - Diàmetre 20 cm',
-			en: 'Large Cake - 20 cm Diameter',
+			es: 'Pastel grande (20 cm)',
+			ca: 'Pastís gran (20 cm)',
+			en: 'Large Cake (20 cm)',
 		},
 		descripcion: {
-			es: 'Bizcochuelo: vainilla o chocolate. Relleno: dulce de leche, ganache chocolate semiamargo, ganache chocolate blanco, ganache de frutos rojos, crema oreo, chantilly + fruta. Temática: color + detalle (texto, dibujo)',
-			ca: 'Pa de pessic: vainilla o xocolata. Farcit: dolç de llet, ganache xocolata semiamarg, ganache xocolata blanc, ganache de fruits vermells, crema oreo, chantilly + fruita. Temàtica: color + detall (text, dibuix)',
-			en: 'Sponge cake: vanilla or chocolate. Filling: dulce de leche, semi-sweet chocolate ganache, white chocolate ganache, red fruits ganache, oreo cream, chantilly + fruit. Theme: color + detail (text, drawing)',
+			es: 'Tres capas de bizcochuelo de vainilla o chocolate con dos rellenos a elección. Decorado con temática personalizada en color y detalle.',
+			ca: 'Tres capes de pa de pessic de vainilla o xocolata amb dos farcits a elecció. Decorat amb temàtica personalitzada en color i detall.',
+			en: 'Three layers of vanilla or chocolate sponge cake with two fillings of choice. Decorated with personalized theme in color and detail.',
 		},
 		precio: 100,
 		categoria: 'pasteles',
-		imagen: '/images/productos/pastel-4.jpg',
+		imagen: '/images/productos/pastel-grande-20cm.jpg',
 		ingredientes: {
 			es: [
-				'Bizcochuelo de vainilla o chocolate',
+				'Tres capas de bizcochuelo de vainilla o chocolate',
 				'Dos rellenos a elección',
 				'Temática personalizada',
 			],
 			ca: [
-				'Pa de pessic de vainilla o xocolata',
+				'Tres capes de pa de pessic de vainilla o xocolata',
 				'Dos farcits a elecció',
 				'Temàtica personalitzada',
 			],
 			en: [
-				'Vanilla or chocolate sponge cake',
+				'Three layers of vanilla or chocolate sponge cake',
 				'Two fillings of choice',
 				'Personalized theme',
 			],
@@ -302,20 +302,20 @@ export const productos: Producto[] = [
 
 	// EXTRAS PARA PASTELES
 	{
-		id: 'macaron-unidad',
+		id: 'macaron-pastel',
 		nombre: {
-			es: 'Macaron x unidad',
-			ca: 'Macaron per unitat',
-			en: 'Macaron per unit',
+			es: 'Macaron (unidad)',
+			ca: 'Macaron (unitat)',
+			en: 'Macaron (unit)',
 		},
 		descripcion: {
-			es: 'Macaron individual para decorar pasteles',
-			ca: 'Macaron individual per decorar pastissos',
-			en: 'Individual macaron to decorate cakes',
+			es: 'Macaron individual para decorar o acompañar tu pastel.',
+			ca: 'Macaron individual per decorar o acompanyar el teu pastís.',
+			en: 'Individual macaron to decorate or to accompany your cake.',
 		},
 		precio: 3,
 		categoria: 'extras-pasteles',
-		imagen: '/images/productos/pastel-macarons.jpg',
+		imagen: '/images/productos/macaron-pastel.jpg',
 		ingredientes: {
 			es: ['Almendras', 'Azúcar', 'Claras de huevo'],
 			ca: ['Ametlles', 'Sucre', "Clares d'ou"],
@@ -333,18 +333,18 @@ export const productos: Producto[] = [
 	{
 		id: 'drip-pastel-pequeno',
 		nombre: {
-			es: 'DRIP pastel pequeño (efecto chorreado)',
-			ca: 'DRIP pastís petit (efecte degotejat)',
-			en: 'DRIP small cake (drip effect)',
+			es: 'Drip para pastel pequeño',
+			ca: 'Drip per pastís petit',
+			en: 'Drip for small cake',
 		},
 		descripcion: {
-			es: 'Efecto chorreado para pasteles pequeños',
-			ca: 'Efecte degotejat per pastissos petits',
-			en: 'Drip effect for small cakes',
+			es: 'Efecto chorreado decorativo para pasteles de tamaño pequeño.',
+			ca: 'Efecte degotejat decoratiu per pastissos de mida petita.',
+			en: 'Decorative drip effect for small size cakes.',
 		},
 		precio: 5,
 		categoria: 'extras-pasteles',
-		imagen: '/images/productos/pastel-4.jpg',
+		imagen: '/images/productos/drip-pastel-pequeno.jpg',
 		ingredientes: {
 			es: ['Chocolate', 'Colorantes'],
 			ca: ['Xocolata', 'Colorants'],
@@ -362,18 +362,18 @@ export const productos: Producto[] = [
 	{
 		id: 'drip-pastel-grande',
 		nombre: {
-			es: 'DRIP pastel grande (efecto chorreado)',
-			ca: 'DRIP pastís gran (efecte degotejat)',
-			en: 'DRIP large cake (drip effect)',
+			es: 'Drip para pastel grande',
+			ca: 'Drip per pastís gran',
+			en: 'Drip for large cake',
 		},
 		descripcion: {
-			es: 'Efecto chorreado para pasteles grandes',
-			ca: 'Efecte degotejat per pastissos grans',
-			en: 'Drip effect for large cakes',
+			es: 'Efecto chorreado decorativo para pasteles de tamaño grande.',
+			ca: 'Efecte degotejat decoratiu per pastissos de mida gran.',
+			en: 'Decorative drip effect for large size cakes.',
 		},
 		precio: 10,
 		categoria: 'extras-pasteles',
-		imagen: '/images/productos/pastel-4.jpg',
+		imagen: '/images/productos/drip-pastel-grande.jpg',
 		ingredientes: {
 			es: ['Chocolate', 'Colorantes'],
 			ca: ['Xocolata', 'Colorants'],
@@ -398,9 +398,9 @@ export const productos: Producto[] = [
 			en: 'Rogel',
 		},
 		descripcion: {
-			es: 'Capas de masa fina y crocante - dulce de leche - merengue italiano',
-			ca: 'Capes de massa fina i cruixent - dolç de llet - merengue italià',
-			en: 'Thin crispy dough layers - dulce de leche - Italian meringue',
+			es: 'Capas de masa fina y crocante con dulce de leche, cubierto con merengue italiano.',
+			ca: 'Capes de massa fina i cruixent amb dolç de llet, cobrit amb merengue italià.',
+			en: 'Thin and crispy dough layers with dulce de leche, covered with Italian meringue.',
 		},
 		precio: 35,
 		categoria: 'postres',
@@ -427,9 +427,9 @@ export const productos: Producto[] = [
 			en: 'Walnut cake',
 		},
 		descripcion: {
-			es: 'Masa soufflé de nueces - dulce de leche - crema chantilly - chocolate blanco',
-			ca: 'Massa soufflé de nous - dolç de llet - crema chantilly - xocolata blanc',
-			en: 'Walnut soufflé dough - dulce de leche - chantilly cream - white chocolate',
+			es: 'Bizcochuelo suave de nuez con dulce de leche, crema chantilly y chocolate blanco.',
+			ca: 'Pa de pessic suau de nou amb dolç de llet, crema chantilly i xocolata blanc.',
+			en: 'Soft walnut sponge cake with dulce de leche, chantilly cream and white chocolate.',
 		},
 		precio: 35,
 		categoria: 'postres',
@@ -471,9 +471,9 @@ export const productos: Producto[] = [
 			en: 'Lemon pie',
 		},
 		descripcion: {
-			es: 'Masa sableé - curd de limón - merengue italiano',
-			ca: 'Massa sableé - curd de llimona - merengue italià',
-			en: 'Sable dough - lemon curd - Italian meringue',
+			es: 'Masa sablée con curd de limón y merengue italiano.',
+			ca: 'Massa sablée amb curd de llimona i merengue italià.',
+			en: 'Sablée dough with lemon curd and Italian meringue.',
 		},
 		precio: 35,
 		categoria: 'postres',
@@ -500,7 +500,7 @@ export const productos: Producto[] = [
 			en: 'Apple crumble',
 		},
 		descripcion: {
-			es: 'Masa sableé - relleno de manzanas caramelizadas, nueces y canela - crumble',
+			es: 'Masa sablée con relleno de manzanas caramelizadas, nueces y canela, cubierto con crumble.',
 			ca: 'Massa sableé - farcit de pomes caramelitzades, nous i canyella - crumble',
 			en: 'Sable dough - filling of caramelized apples, walnuts and cinnamon - crumble',
 		},
@@ -529,7 +529,7 @@ export const productos: Producto[] = [
 			en: 'Fruit tart',
 		},
 		descripcion: {
-			es: 'Masa sableé - crema pastelera - frutas de estación',
+			es: 'Masa sablée con crema pastelera y frutas de estación.',
 			ca: "Massa sableé - crema pastelera - fruites d'estació",
 			en: 'Sable dough - pastry cream - seasonal fruits',
 		},
@@ -587,7 +587,7 @@ export const productos: Producto[] = [
 			en: 'Strawberry tart',
 		},
 		descripcion: {
-			es: 'Masa sableé - dulce de leche - crema chantilly - frutillas frescas',
+			es: 'Masa sablée con dulce de leche, crema chantilly y frutillas frescas.',
 			ca: 'Massa sableé - dolç de llet - crema chantilly - maduixes fresques',
 			en: 'Sable dough - dulce de leche - chantilly cream - fresh strawberries',
 		},
@@ -631,7 +631,7 @@ export const productos: Producto[] = [
 			en: 'Havannet',
 		},
 		descripcion: {
-			es: 'Masa sableé - dulce de leche - ganache de chocolate',
+			es: 'Masa sablée con dulce de leche y ganache de chocolate.',
 			ca: 'Massa sableé - dolç de llet - ganache de xocolata',
 			en: 'Sable dough - dulce de leche - chocolate ganache',
 		},
@@ -702,14 +702,14 @@ export const productos: Producto[] = [
 	{
 		id: 'brownie',
 		nombre: {
-			es: 'Brownie - Rinde 12/14 porciones',
-			ca: 'Brownie - Rendiment 12/14 porcions',
-			en: 'Brownie - Serves 12/14 portions',
+			es: 'Brownie (12–14 porciones)',
+			ca: 'Brownie (12–14 porcions)',
+			en: 'Brownie (12–14 portions)',
 		},
 		descripcion: {
-			es: 'Base de brownie con/sin nueces - dulce de leche - merengue italiano',
-			ca: 'Base de brownie amb/sense nous - dolç de llet - merengue italià',
-			en: 'Brownie base with/without walnuts - dulce de leche - Italian meringue',
+			es: 'Base de brownie con o sin nueces, cubierto con dulce de leche y merengue italiano.',
+			ca: 'Base de brownie amb o sense nous, cobrit amb dolç de llet i merengue italià.',
+			en: 'Brownie base with or without walnuts, covered with dulce de leche and Italian meringue.',
 		},
 		precio: 45,
 		categoria: 'postres',
@@ -799,8 +799,8 @@ export const productos: Producto[] = [
 	{
 		id: 'cheesecake-chocolate',
 		nombre: {
-			es: 'Cheesecake chocolate',
-			ca: 'Cheesecake xocolata',
+			es: 'Cheesecake de chocolate',
+			ca: 'Cheesecake de xocolata',
 			en: 'Chocolate cheesecake',
 		},
 		descripcion: {
@@ -828,8 +828,8 @@ export const productos: Producto[] = [
 	{
 		id: 'cheesecake-frambuesa-chocolate-blanco',
 		nombre: {
-			es: 'Cheesecake frambuesa y chocolate blanco',
-			ca: 'Cheesecake frambuesa i xocolata blanca',
+			es: 'Cheesecake de frambuesa y chocolate blanco',
+			ca: 'Cheesecake de frambuesa i xocolata blanca',
 			en: 'Raspberry and white chocolate cheesecake',
 		},
 		descripcion: {
@@ -867,8 +867,8 @@ export const productos: Producto[] = [
 	{
 		id: 'cheesecake-pistacho',
 		nombre: {
-			es: 'Cheesecake Pistacho',
-			ca: 'Cheesecake Pistatxo',
+			es: 'Cheesecake de pistacho',
+			ca: 'Cheesecake de pistatxo',
 			en: 'Pistachio Cheesecake',
 		},
 		descripcion: {
@@ -898,14 +898,14 @@ export const productos: Producto[] = [
 	{
 		id: 'alfajor-maicena',
 		nombre: {
-			es: 'Alfajor Maicena',
-			ca: 'Alfajor Maicena',
-			en: 'Maicena Alfajor',
+			es: 'Alfajor de maicena',
+			ca: 'Alfajor de maicena',
+			en: 'Maicena alfajor',
 		},
 		descripcion: {
-			es: 'Alfajor tradicional de maicena con dulce de leche',
-			ca: 'Alfajor tradicional de maicena amb dolç de llet',
-			en: 'Traditional maicena alfajor with dulce de leche',
+			es: 'Alfajor clásico relleno de dulce de leche.',
+			ca: 'Alfajor clàssic farcit de dolç de llet.',
+			en: 'Classic alfajor filled with dulce de leche.',
 		},
 		precio: 4,
 		categoria: 'alfajores',
@@ -927,8 +927,8 @@ export const productos: Producto[] = [
 	{
 		id: 'alfajor-nuez-chocolate-blanco',
 		nombre: {
-			es: 'Alfajor Nuez, chocolate blanco y dulce de leche',
-			ca: 'Alfajor Nous, xocolata blanca i dolç de llet',
+			es: 'Alfajor de nuez, chocolate blanco y dulce de leche',
+			ca: 'Alfajor de nes, xocolata blanca i dolç de llet',
 			en: 'Walnut, white chocolate and dulce de leche alfajor',
 		},
 		descripcion: {
@@ -956,8 +956,8 @@ export const productos: Producto[] = [
 	{
 		id: 'alfajor-dulce-leche-chocolate',
 		nombre: {
-			es: 'Alfajor Dulce de leche y chocolate',
-			ca: 'Alfajor Dolç de llet i xocolata',
+			es: 'Alfajor de dulce de leche y chocolate',
+			ca: 'Alfajor de dolç de llet i xocolata',
 			en: 'Dulce de leche and chocolate alfajor',
 		},
 		descripcion: {
@@ -985,8 +985,8 @@ export const productos: Producto[] = [
 	{
 		id: 'alfajor-frutos-rojos',
 		nombre: {
-			es: 'Alfajor Frutos rojos, dulce de leche y chocolate blanco',
-			ca: 'Alfajor Fruits vermells, dolç de llet i xocolata blanca',
+			es: 'Alfajor de frutos rojos, dulce de leche y chocolate blanco',
+			ca: 'Alfajor de fruits vermells, dolç de llet i xocolata blanca',
 			en: 'Red fruits, dulce de leche and white chocolate alfajor',
 		},
 		descripcion: {
@@ -1016,7 +1016,7 @@ export const productos: Producto[] = [
 	{
 		id: 'cookie-limon-amapolas',
 		nombre: {
-			es: 'Cookie Limón y amapolas',
+			es: 'Cookie de limón y amapolas',
 			ca: 'Cookie Llimona i roselles',
 			en: 'Lemon and poppy seeds cookie',
 		},
@@ -1045,7 +1045,7 @@ export const productos: Producto[] = [
 	{
 		id: 'cookie-avena-chips-chocolate',
 		nombre: {
-			es: 'Cookie Avena y chips de chocolate',
+			es: 'Cookie de avena y chips de chocolate',
 			ca: 'Cookie Civada i chips de xocolata',
 			en: 'Oatmeal and chocolate chips cookie',
 		},
@@ -1074,7 +1074,7 @@ export const productos: Producto[] = [
 	{
 		id: 'cookie-naranja-chocolate',
 		nombre: {
-			es: 'Cookie Naranja y chocolate',
+			es: 'Cookie de naranja y chocolate',
 			ca: 'Cookie Taronja i xocolata',
 			en: 'Orange and chocolate cookie',
 		},
@@ -1103,7 +1103,7 @@ export const productos: Producto[] = [
 	{
 		id: 'cookie-chocolate-nuez',
 		nombre: {
-			es: 'Cookie Chocolate y nuez',
+			es: 'Cookie de chocolate y nuez',
 			ca: 'Cookie Xocolata i nous',
 			en: 'Chocolate and walnut cookie',
 		},
@@ -1132,22 +1132,22 @@ export const productos: Producto[] = [
 	{
 		id: 'cookie-pistacho',
 		nombre: {
-			es: 'Cookie Pistacho',
-			ca: 'Cookie Pistatxo',
-			en: 'Pistachio Cookie',
+			es: 'Cookie de pistacho y frambuesa',
+			ca: 'Cookie Pistatxo i frambuesa',
+			en: 'Pistachio and raspberry cookie',
 		},
 		descripcion: {
-			es: 'Cookie de pistacho',
-			ca: 'Cookie de pistatxo',
-			en: 'Pistachio cookie',
+			es: 'Cookie de pistacho con frambuesa',
+			ca: 'Cookie de pistatxo amb frambuesa',
+			en: 'Pistachio cookie with raspberry',
 		},
 		precio: 4.5,
 		categoria: 'cookies',
 		imagen: '/images/productos/cookie-pistacho.jpg',
 		ingredientes: {
-			es: ['Harina', 'Pistacho', 'Mantequilla'],
-			ca: ['Farina', 'Pistatxo', 'Mantega'],
-			en: ['Flour', 'Pistachio', 'Butter'],
+			es: ['Harina', 'Pistacho', 'Frambuesa', 'Mantequilla'],
+			ca: ['Farina', 'Pistatxo', 'Frambuesa', 'Mantega'],
+			en: ['Flour', 'Pistachio', 'Raspberry', 'Butter'],
 		},
 		alergenos: {
 			es: ['Gluten', 'Huevos', 'Lácteos', 'Frutos secos'],
@@ -1192,14 +1192,14 @@ export const productos: Producto[] = [
 	{
 		id: 'cuadrado-limon-glase',
 		nombre: {
-			es: 'Cuadrado Limón y glase',
-			ca: 'Quadrat Llimona i glaçat',
-			en: 'Lemon and glaze square',
-		},
-		descripcion: {
 			es: 'Cuadrado de limón con glaseado',
 			ca: 'Quadrat de llimona amb glaçat',
 			en: 'Lemon square with glaze',
+		},
+		descripcion: {
+			es: 'Bizcocho de limón con cobertura de glaseado.',
+			ca: 'Pa de pessic de llimona amb cobriga de glaçat.',
+			en: 'Lemon sponge cake with glaze coating.',
 		},
 		precio: 4,
 		categoria: 'cuadrados',
@@ -1221,14 +1221,14 @@ export const productos: Producto[] = [
 	{
 		id: 'cuadrado-manzana-crumble',
 		nombre: {
-			es: 'Cuadrado Manzana y crumble',
-			ca: 'Quadrat Poma i crumble',
-			en: 'Apple and crumble square',
-		},
-		descripcion: {
 			es: 'Cuadrado de manzana con crumble',
 			ca: 'Quadrat de poma amb crumble',
 			en: 'Apple square with crumble',
+		},
+		descripcion: {
+			es: 'Masa sablée con relleno de manzanas caramelizadas, nueces y canela, cubierto con crumble.',
+			ca: 'Massa sablée amb farcit de pomes caramelitzades, nous i canyella, cobrit amb crumble.',
+			en: 'Sablée dough with filling of caramelized apples, walnuts and cinnamon, covered with crumble.',
 		},
 		precio: 4,
 		categoria: 'cuadrados',
@@ -1250,14 +1250,14 @@ export const productos: Producto[] = [
 	{
 		id: 'cuadrado-coco-dulce-leche',
 		nombre: {
-			es: 'Cuadrado Coco y dulce de leche',
+			es: 'Cuadrado de coco y dulce de leche',
 			ca: 'Quadrat Coco i dolç de llet',
 			en: 'Coconut and dulce de leche square',
 		},
 		descripcion: {
-			es: 'Cuadrado de coco y dulce de leche',
-			ca: 'Quadrat de coco i dolç de llet',
-			en: 'Coconut and dulce de leche square',
+			es: 'Masa sablée con relleno de manzanas caramelizadas, nueces y canela, cubierto con crumble.',
+			ca: 'Massa sablée amb farcit de pomes caramelitzades, nás i canyella, cobrit amb crumble.',
+			en: 'Sablée dough with filling of caramelized apples, walnuts and cinnamon, covered with crumble.',
 		},
 		precio: 5,
 		categoria: 'cuadrados',
@@ -1310,16 +1310,16 @@ export const productos: Producto[] = [
 	{
 		id: 'medialunas-x6',
 		nombre: {
-			es: 'Medialunas x 6',
-			ca: 'Croissants x 6',
-			en: 'Croissants x 6',
+			es: 'Medialunas (6 unidades)',
+			ca: 'Croissants (6 unitats)',
+			en: 'Croissants (6 units)',
 		},
 		descripcion: {
-			es: 'Pack de 6 medialunas artesanales',
-			ca: 'Pack de 6 croissants artesanals',
-			en: 'Pack of 6 artisanal croissants',
+			es: 'Pack de 6 medialunas artesanales recién horneadas.',
+			ca: 'Pack de 6 croissants artesanals recén fornejats.',
+			en: 'Pack of 6 freshly baked artisanal croissants.',
 		},
-		precio: 12,
+		precio: 11,
 		categoria: 'medialunas',
 		imagen: '/images/productos/medialunas.jpg',
 		ingredientes: {
@@ -1341,14 +1341,14 @@ export const productos: Producto[] = [
 	{
 		id: 'macarons-x6',
 		nombre: {
-			es: 'Macarons x 6',
-			ca: 'Macarons x 6',
-			en: 'Macarons x 6',
+			es: 'Macarons (6 unidades)',
+			ca: 'Macarons (6 unitats)',
+			en: 'Macarons (6 units)',
 		},
 		descripcion: {
-			es: 'Pack de 6 macarons artesanales',
-			ca: 'Pack de 6 macarons artesanals',
-			en: 'Pack of 6 artisanal macarons',
+			es: 'Pack de 6 macarons artesanales surtidos.',
+			ca: 'Pack de 6 macarons artesanals surtits.',
+			en: 'Pack of 6 assorted artisanal macarons.',
 		},
 		precio: 21,
 		categoria: 'macarons',

@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import { getMessages } from '@/messages';
 
-const IntroSection = () => {
+const OurPhilosophy = () => {
 	const params = useParams<{ lang: string }>();
 	const lang = params?.lang || 'es';
 	const t = getMessages(lang);
 	const [isExpanded, setIsExpanded] = useState(false);
 	return (
-		<div className="card mb-8 sm:mb-12">
+		<div className="card">
 			<div className="text-center mb-6">
 				<h2 className="text-2xl sm:text-3xl font-bold text-bendito-primary mb-4 font-display">
 					{t.philosophy.title}
@@ -203,15 +203,7 @@ const IntroSection = () => {
 						{/* Cierre inspiracional */}
 						<div className="text-center mt-8 p-6 bg-gradient-to-r from-bendito-primary/10 to-bendito-secondary/10 rounded-xl">
 							<p className="text-lg text-bendito-text font-medium italic">
-								{/* Para mantener énfasis, se usan spans con partes destacadas */}
-								{t.philosophy.closing.creativeFreedom ? '' : ''}
-								<span className="text-bendito-primary font-semibold">
-									{t.philosophy.closing.creativeFreedom}
-								</span>{' '}
-								{t.philosophy.closing.memorable ? '' : ''}{' '}
-								<span className="text-bendito-primary font-semibold">
-									{t.philosophy.closing.memorable}
-								</span>
+								{t.philosophy.closing.message}
 							</p>
 						</div>
 					</>
@@ -221,4 +213,4 @@ const IntroSection = () => {
 	);
 };
 
-export default IntroSection;
+export default OurPhilosophy;

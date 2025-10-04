@@ -7,7 +7,7 @@ import Logo from '@/components/Logo';
 import ProductGrid from '@/components/catalogo/ProductGrid';
 import CategoryFilter from '@/components/catalogo/CategoryFilter';
 import SearchBar from '@/components/catalogo/SearchBar';
-import IntroSection from '@/components/catalogo/IntroSection';
+import OurPhilosophy from '@/components/catalogo/OurPhilosophy';
 import VisualTutorial from '@/components/catalogo/VisualTutorial';
 import ProductModal from '@/components/catalogo/ProductModal';
 import MobileStickyBar from '@/components/catalogo/MobileStickyBar';
@@ -147,9 +147,6 @@ const CatalogoPage = () => {
 						</div>
 					</div>
 
-					{/* Sección de Introducción y Filosofía */}
-					<IntroSection />
-
 					{/* Tutorial Visual de 3 Pasos */}
 					<VisualTutorial />
 
@@ -209,6 +206,11 @@ const CatalogoPage = () => {
 						productos={productosFiltrados}
 						onVerDetalles={handleVerDetalles}
 					/>
+
+					{/* Espaciado para Nuestra Filosofía */}
+					<div className="mt-12 mb-6 sm:mt-16 sm:mb-8">
+						<OurPhilosophy />
+					</div>
 
 					{/* Sección de Contacto y Consultas - Al Final del Catálogo */}
 					<div className="card text-center mb-8 mt-12">
