@@ -12,7 +12,7 @@
 		"constructionTitle": "🚧 Sitio en Construcción",
 		"constructionDescription": "Estamos trabajando para traerte la mejor experiencia. Mientras tanto, explora nuestro catálogo completo de productos artesanales.",
 		"viewCatalog": "🍰 Ver Catálogo Completo",
-		"contactWhatsApp": "Contactar por WhatsApp"
+		"contactWhatsApp": "Escríbenos por WhatsApp"
 	},
 	"catalog": {
 		"title": "Nuestro Catálogo",
@@ -25,33 +25,31 @@
 		"inCategory": "en",
 		"forTerm": "para",
 		"haveQuestions": "¿Tienes alguna pregunta?",
-		"contactDescription": "Contáctanos para hacer tu pedido o resolver cualquier duda sobre nuestros productos.",
+		"contactDescription": "Escríbenos para hacer tu pedido o resolver cualquier pregunta sobre nuestros productos.",
 		"downloadCatalog": "📄 Descargar Catálogo PDF",
 		"howItWorks": "¿Cómo funciona?",
 		"easyToOrder": "Es muy fácil pedir tus productos favoritos",
-		"pickupMessage": "🛍️ Los pedidos se retiran en nuestro local",
-		"pickupInfo": "Todos los pedidos se retiran en nuestra tienda",
-		"pickupAddress": "Encargos con 48h de anticipación y retiro en local",
-		"storeAddress": "📍 Dirección del local",
+		"pickupMessage": "🛍️ Los pedidos se recogen en nuestra tienda",
+		"pickupInfo": "Todos los pedidos se recogen en nuestra tienda",
+		"pickupAddress": "Pedidos con 48 horas de antelación y recogida en tienda",
+		"storeAddress": "📍 Dirección de la tienda",
 		"getDirections": "Cómo llegar",
 		"modalInstructions": "Para confirmar tu pedido, escríbenos por WhatsApp",
-		"modalTiming": "Tiempo de anticipación: 48h",
+		"modalTiming": "Tiempo mínimo: 48 horas",
 		"modalMultipleProducts": "Puedes pedir más productos en el mismo mensaje",
-		"filterActive": "Mostrando productos disponibles para encargos por WhatsApp",
+		"filterActive": "Mostrando productos disponibles para pedidos por WhatsApp",
 		"noResults": "No encontramos productos que coincidan con tu búsqueda",
 		"noResultsSuggestion": "¿No encuentras lo que buscas?",
 		"consultAvailability": "Consultar disponibilidad por WhatsApp",
-		"allergenDisclaimer": "Indícanos tus alergias al hacer el pedido",
-		"addToOrder": "Agregar a mi pedido",
+		"allergenDisclaimer": "Cuéntanos sobre tus alergias al hacer el pedido",
+		"addToOrder": "Añadir al pedido",
 		"viewOrder": "Ver mi pedido",
-		"clearOrder": "Limpiar pedido",
+		"clearOrder": "Vaciar pedido",
 		"orderSummary": "Resumen del pedido",
-		"totalItems": "productos en tu pedido",
+		"totalItems": "producto en tu pedido",
+		"totalItemsPlural": "productos en tu pedido",
 		"continueShopping": "Seguir comprando",
 		"sendOrder": "Enviar pedido por WhatsApp",
-		"copyProduct": "Copiar producto",
-		"productCopied": "¡Producto copiado!",
-		"copyProductTooltip": "Copia el producto para armar tu lista en WhatsApp",
 		"tutorialSteps": {
 			"step1": {
 				"title": "Mira el catálogo",
@@ -66,39 +64,38 @@
 				"description": "Envía tu mensaje y confirma tu pedido"
 			},
 			"step4": {
-				"title": "Retíralo en nuestro local",
+				"title": "Recógelo en nuestra tienda",
 				"description": "Ven a buscar tu pedido cuando esté listo"
 			}
 		}
 	},
 	"philosophy": {
 		"title": "Nuestra Filosofía",
-		"mainDescription": "Queremos crear un pastel único, especial y delicioso para vos. Cada uno de nuestros dulces se elabora de manera completamente artesanal, priorizando siempre ingredientes de la mejor calidad y respetando los tiempos que cada proceso necesita para que el resultado sea perfecto.",
+		"mainDescription": "Queremos crear un pastel único, especial y delicioso para ti.\n\nCada uno de nuestros dulces se elabora de forma completamente artesanal, priorizando ingredientes de la mejor calidad y respetando los tiempos que cada proceso necesita para alcanzar un resultado perfecto.",
 		"artisanal": "artesanal",
 		"perfect": "perfecto",
-		"collaborationTitle": "Para asegurarnos de lograrlo, necesitamos tu colaboración:",
+		"collaborationTitle": "Para conseguirlo, necesitamos tu colaboración:",
 		"anticipation": {
-			"title": "Anticipación",
-			"description": "Encargá tu pastel con al menos 48 horas de anticipación. Esto nos permite planificar y dedicarle el tiempo que merece.",
-			"hours": "48 horas de anticipación"
+			"title": "Antelación",
+			"description": "Haz tu pedido con al menos 48 horas de antelación.\nEsto nos permite planificar y dedicarle el tiempo que merece cada creación.",
+			"hours": "48 horas de antelación"
 		},
 		"preferences": {
 			"title": "Preferencias",
-			"description": "Contanos tus gustos y preferencias al hacer el pedido. Así evitamos sabores que no disfrutes y cuidamos cualquier alergia o restricción alimentaria.",
+			"description": "Cuéntanos tus gustos y preferencias al hacer el pedido.\nAsí evitamos sabores que no te gusten y cuidamos cualquier alergia o restricción alimentaria para prevenir contaminación cruzada.",
 			"allergies": "alergia o restricción alimentaria"
 		},
 		"inspiration": {
 			"title": "Inspiración",
-			"description": "Podés compartirnos referencias e inspiraciones (como imágenes de Pinterest), pero no realizamos réplicas exactas: nos gusta crear algo único para vos.",
+			"description": "Puedes enviarnos referencias o imágenes de inspiración (por ejemplo, de Pinterest u otros colegas), pero no realizamos réplicas exactas: nos gusta diseñar algo verdaderamente único para ti.",
 			"noReplicas": "no realizamos réplicas exactas"
 		},
 		"decorations": {
 			"title": "Decoraciones",
-			"description": "Nuestras cubiertas se elaboran principalmente con buttercream sabor vainilla. También podemos hacerlas con ganache de chocolate.",
-			"buttercream": "buttercream sabor vainilla"
+			"description": "Nuestras cubiertas y decoraciones se elaboran principalmente con buttercream de vainilla. Si lo prefieres, también podemos hacerlas con ganache de chocolate blanco o negro. Ten en cuenta que algunas decoraciones o precios pueden variar."
 		},
 		"closing": {
-			"message": "Te agradecemos que nos des la libertad creativa para diseñar algo que no solo se vea increíble, sino que también sea memorable al primer bocado."
+			"message": "Gracias por confiar en nuestra creatividad para elaborar algo que no solo se vea increíble, sino que también sea memorable desde el primer bocado."
 		}
 	},
 	"products": {
@@ -109,11 +106,11 @@
 		"ingredients": "Ingredientes",
 		"allergens": "⚠️ Alérgenos",
 		"importantInfo": "💡 Información Importante",
-		"orderAdvance": "Pedidos con 48 horas de anticipación",
+		"orderAdvance": "Pedidos con 48 horas de antelación",
 		"buttercream": "buttercream vainilla",
 		"chocolateGanache": "ganache de chocolate",
 		"noReplicas": "No realizamos réplicas exactas",
-		"notAvailable": "⚠️ Este producto no está disponible actualmente",
+		"notAvailable": "⚠️ No disponible ahora",
 		"featured": "⭐ Destacado",
 		"outOfStock": "Agotado",
 		"containsAllergens": "Contiene alérgenos"
@@ -130,7 +127,7 @@
 		"catalog": "Catálogo",
 		"downloadPdf": "Descargar PDF",
 		"contact": "Contacto",
-		"orderAdvanceShort": "Pedidos con 48h de anticipación",
+		"orderAdvanceShort": "Pedidos con 48 horas de antelación",
 		"catalogPdf": "Catálogo PDF",
 		"whatsapp": "WhatsApp"
 	}

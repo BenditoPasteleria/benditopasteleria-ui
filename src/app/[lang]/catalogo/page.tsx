@@ -138,8 +138,8 @@ const CatalogoPage = () => {
 					<div className="text-center mb-8">
 						<div className="bg-gradient-to-r from-bendito-primary/10 to-bendito-secondary/10 rounded-xl p-6 max-w-4xl mx-auto">
 							<p className="text-lg sm:text-xl text-bendito-text font-medium leading-relaxed mb-3">
-								🍰 Horneamos a pedido, con 48h de anticipación. Pide fácilmente
-								por WhatsApp 👇
+								🍰 Hacemos pasteles personalizados, con 48 horas de antelación.
+								Pide fácilmente por WhatsApp 👇
 							</p>
 							<p className="text-base text-bendito-text/80 font-medium">
 								{t.catalog.pickupMessage}

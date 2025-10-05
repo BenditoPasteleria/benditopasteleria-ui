@@ -12,7 +12,7 @@
 		"constructionTitle": "🚧 Site Under Construction",
 		"constructionDescription": "We are working to bring you the best experience. In the meantime, explore our complete catalog of artisanal products.",
 		"viewCatalog": "🍰 View Complete Catalog",
-		"contactWhatsApp": "Contact via WhatsApp"
+		"contactWhatsApp": "Contact us via WhatsApp"
 	},
 	"catalog": {
 		"title": "Our Catalog",
@@ -31,27 +31,25 @@
 		"easyToOrder": "It's very easy to order your favorite products",
 		"pickupMessage": "🛍️ Orders are picked up at our store",
 		"pickupInfo": "All orders are picked up at our store",
-		"pickupAddress": "Orders with 48h advance notice and pickup at store",
+		"pickupAddress": "Orders with 48 hours advance notice and pickup at store",
 		"storeAddress": "📍 Store address",
 		"getDirections": "Get directions",
-		"modalInstructions": "To confirm your order, write to us on WhatsApp",
-		"modalTiming": "Advance notice: 48h",
+		"modalInstructions": "To confirm your order, contact us on WhatsApp",
+		"modalTiming": "Minimum time: 48 hours",
 		"modalMultipleProducts": "You can order more products in the same message",
 		"filterActive": "Showing products available for WhatsApp orders",
 		"noResults": "We didn't find products that match your search",
 		"noResultsSuggestion": "Can't find what you're looking for?",
-		"consultAvailability": "Check availability via WhatsApp",
-		"allergenDisclaimer": "Let us know about your allergies when placing your order",
+		"consultAvailability": "Check availability on WhatsApp",
+		"allergenDisclaimer": "Tell us about your allergies when placing your order",
 		"addToOrder": "Add to my order",
 		"viewOrder": "View my order",
 		"clearOrder": "Clear order",
 		"orderSummary": "Order summary",
-		"totalItems": "items in your order",
+		"totalItems": "item in your order",
+		"totalItemsPlural": "items in your order",
 		"continueShopping": "Continue shopping",
 		"sendOrder": "Send order via WhatsApp",
-		"copyProduct": "Copy product",
-		"productCopied": "Product copied!",
-		"copyProductTooltip": "Copy product to create your WhatsApp list",
 		"tutorialSteps": {
 			"step1": {
 				"title": "Browse the catalog",
@@ -73,32 +71,31 @@
 	},
 	"philosophy": {
 		"title": "Our Philosophy",
-		"mainDescription": "We want to create a unique, special and delicious cake for you. Each of our sweets is made in a completely artisanal way, always prioritizing the best quality ingredients and respecting the time that each process needs for the result to be perfect.",
+		"mainDescription": "We want to create a unique, special and delicious cake for you.\n\nEach of our sweets is made in a completely artisanal way, prioritizing the best quality ingredients and respecting the time that each process needs to achieve a perfect result.",
 		"artisanal": "artisanal",
 		"perfect": "perfect",
-		"collaborationTitle": "To ensure we achieve this, we need your collaboration:",
+		"collaborationTitle": "To achieve this, we need your collaboration:",
 		"anticipation": {
 			"title": "Advance Notice",
-			"description": "Order your cake with at least 48 hours advance notice. This allows us to plan and dedicate the time it deserves.",
+			"description": "Place your order with at least 48 hours advance notice.\nThis allows us to plan and dedicate the time that each creation deserves.",
 			"hours": "48 hours advance notice"
 		},
 		"preferences": {
 			"title": "Preferences",
-			"description": "Tell us your tastes and preferences when placing the order. This way we avoid flavors you don't enjoy and take care of any allergies or dietary restrictions.",
+			"description": "Tell us your tastes and preferences when placing the order.\nThis way we avoid flavors you don't like and take care of any allergies or dietary restrictions to prevent cross-contamination.",
 			"allergies": "allergies or dietary restrictions"
 		},
 		"inspiration": {
 			"title": "Inspiration",
-			"description": "You can share references and inspirations with us (like Pinterest images), but we don't make exact replicas: we like to create something unique for you.",
+			"description": "You can send us references or inspiration images (for example, from Pinterest or other colleagues), but we don't make exact replicas: we like to design something truly unique for you.",
 			"noReplicas": "we don't make exact replicas"
 		},
 		"decorations": {
 			"title": "Decorations",
-			"description": "Our coverings are made mainly with vanilla buttercream. We can also make them with chocolate ganache.",
-			"buttercream": "vanilla buttercream"
+			"description": "Our coverings and decorations are made mainly with vanilla buttercream. If you prefer, we can also make them with white or dark chocolate ganache. Please note that some decorations or prices may vary."
 		},
 		"closing": {
-			"message": "We thank you for giving us the creative freedom to design something that not only looks incredible, but is also memorable from the first bite."
+			"message": "Thank you for trusting our creativity to create something that not only looks incredible, but is also memorable from the first bite."
 		}
 	},
 	"products": {
@@ -113,7 +110,7 @@
 		"buttercream": "vanilla buttercream",
 		"chocolateGanache": "chocolate ganache",
 		"noReplicas": "We don't make exact replicas",
-		"notAvailable": "⚠️ This product is not currently available",
+		"notAvailable": "⚠️ Not available now",
 		"featured": "⭐ Featured",
 		"outOfStock": "Out of Stock",
 		"containsAllergens": "Contains allergens"
@@ -130,7 +127,7 @@
 		"catalog": "Catalog",
 		"downloadPdf": "Download PDF",
 		"contact": "Contact",
-		"orderAdvanceShort": "Orders with 48h notice",
+		"orderAdvanceShort": "Orders with 48 hours notice",
 		"catalogPdf": "Catalog PDF",
 		"whatsapp": "WhatsApp"
 	}

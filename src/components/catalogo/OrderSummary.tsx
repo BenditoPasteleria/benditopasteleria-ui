@@ -61,7 +61,10 @@ const OrderSummary = () => {
 					/>
 				</svg>
 				<span className="hidden sm:inline">
-					{getTotalItems()} {t.catalog.totalItems}
+					{getTotalItems()}{' '}
+					{getTotalItems() === 1
+						? t.catalog.totalItems
+						: t.catalog.totalItemsPlural}
 				</span>
 				<span className="sm:hidden">{getTotalItems()}</span>
 			</button>

@@ -28,7 +28,6 @@ const ProductModal = ({
 	const lang = (params?.lang || 'es') as Locale;
 	const t = getMessages(lang);
 	const [isVisible, setIsVisible] = useState(false);
-	const [copied, setCopied] = useState(false);
 	const { addToOrder } = useOrder();
 
 	useEffect(() => {
@@ -59,27 +58,6 @@ const ProductModal = ({
 		},
 		[onClose],
 	);
-
-	const handleCopyProduct = async () => {
-		if (!producto) return;
-
-		const nombre = getTranslatedText(producto.nombre, lang);
-		const descripcion = getTranslatedText(producto.descripcion, lang);
-		const precio = new Intl.NumberFormat('es-ES', {
-			style: 'currency',
-			currency: 'EUR',
-		}).format(producto.precio);
-
-		const productText = `🍰 ${nombre}\n${descripcion}\n💰 ${precio}`;
-
-		try {
-			await navigator.clipboard.writeText(productText);
-			setCopied(true);
-			setTimeout(() => setCopied(false), 2000);
-		} catch (err) {
-			console.error('Error copying to clipboard:', err);
-		}
-	};
 
 	useEffect(() => {
 		if (isOpen) {
@@ -267,32 +245,6 @@ const ProductModal = ({
 									</svg>
 									{t.products.orderWhatsApp}
 								</button>
-								<div className="relative group">
-									<button
-										onClick={handleCopyProduct}
-										className="bg-bendito-secondary/10 hover:bg-bendito-secondary/20 text-bendito-secondary flex-1 py-3 px-6 text-center flex items-center justify-center gap-2 rounded-lg font-medium transition-colors border-2 border-bendito-secondary/30 hover:border-bendito-secondary/50 w-full"
-									>
-										<svg
-											className="w-4 h-4"
-											fill="none"
-											viewBox="0 0 24 24"
-											stroke="currentColor"
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-											/>
-										</svg>
-										{copied ? t.catalog.productCopied : t.catalog.copyProduct}
-									</button>
-									{/* Tooltip */}
-									<div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-bendito-text text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50 max-w-48 text-center">
-										{t.catalog.copyProductTooltip}
-										<div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-bendito-text"></div>
-									</div>
-								</div>
 							</div>
 
 							{/* Instrucciones claras para WhatsApp */}

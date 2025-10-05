@@ -12,7 +12,7 @@
 		"constructionTitle": "🚧 Lloc en Construcció",
 		"constructionDescription": "Estem treballant per portar-te la millor experiència. Mentrestant, explora el nostre catàleg complet de productes artesanals.",
 		"viewCatalog": "🍰 Veure Catàleg Complet",
-		"contactWhatsApp": "Contactar per WhatsApp"
+		"contactWhatsApp": "Contacta'ns per WhatsApp"
 	},
 	"catalog": {
 		"title": "El Nostre Catàleg",
@@ -25,33 +25,31 @@
 		"inCategory": "en",
 		"forTerm": "per",
 		"haveQuestions": "Tens alguna pregunta?",
-		"contactDescription": "Contacta'ns per fer la teva comanda o resoldre qualsevol dubte sobre els nostres productes.",
+		"contactDescription": "Contacta'ns per fer la teva comanda o resoldre qualsevol pregunta sobre els nostres productes.",
 		"downloadCatalog": "📄 Descarregar Catàleg PDF",
 		"howItWorks": "Com funciona?",
 		"easyToOrder": "És molt fàcil demanar els teus productes favorits",
-		"pickupMessage": "🛍️ Les comandes es recullen al nostre local",
+		"pickupMessage": "🛍️ Les comandes es recullen a la nostra botiga",
 		"pickupInfo": "Totes les comandes es recullen a la nostra botiga",
-		"pickupAddress": "Encàrrecs amb 48h d'antelació i recollida al local",
-		"storeAddress": "📍 Adreça del local",
+		"pickupAddress": "Comandes amb 48 hores d'antelació i recollida a la botiga",
+		"storeAddress": "📍 Adreça de la botiga",
 		"getDirections": "Com arribar-hi",
-		"modalInstructions": "Per confirmar la teva comanda, escriu-nos per WhatsApp",
-		"modalTiming": "Temps d'antelació: 48h",
+		"modalInstructions": "Per confirmar la teva comanda, contacta'ns per WhatsApp",
+		"modalTiming": "Temps mínim: 48 hores",
 		"modalMultipleProducts": "Pots demanar més productes en el mateix missatge",
 		"filterActive": "Mostrant productes disponibles per comandes per WhatsApp",
 		"noResults": "No hem trobat productes que coincideixin amb la teva cerca",
 		"noResultsSuggestion": "No trobes el que busques?",
 		"consultAvailability": "Consultar disponibilitat per WhatsApp",
-		"allergenDisclaimer": "Indica'ns les teves al·lèrgies en fer la comanda",
-		"addToOrder": "Afegir a la meva comanda",
+		"allergenDisclaimer": "Explica'ns les teves al·lèrgies en fer la comanda",
+		"addToOrder": "Afegir a la comanda",
 		"viewOrder": "Veure la meva comanda",
-		"clearOrder": "Netejar comanda",
+		"clearOrder": "Buidar comanda",
 		"orderSummary": "Resum de la comanda",
-		"totalItems": "productes a la teva comanda",
+		"totalItems": "producte a la teva comanda",
+		"totalItemsPlural": "productes a la teva comanda",
 		"continueShopping": "Continuar comprant",
 		"sendOrder": "Enviar comanda per WhatsApp",
-		"copyProduct": "Copiar producte",
-		"productCopied": "Producte copiat!",
-		"copyProductTooltip": "Copia el producte per armar la teva llista a WhatsApp",
 		"tutorialSteps": {
 			"step1": {
 				"title": "Mira el catàleg",
@@ -66,39 +64,38 @@
 				"description": "Envia el teu missatge i confirma la comanda"
 			},
 			"step4": {
-				"title": "Recull-lo al nostre local",
+				"title": "Recull-lo a la nostra botiga",
 				"description": "Vine a buscar la teva comanda quan estigui llesta"
 			}
 		}
 	},
 	"philosophy": {
 		"title": "La Nostra Filosofia",
-		"mainDescription": "Volem crear un pastís únic, especial i deliciós per a tu. Cada un dels nostres dolços s'elabora de manera completament artesanal, prioritzant sempre ingredients de la millor qualitat i respectant els temps que cada procés necessita perquè el resultat sigui perfecte.",
+		"mainDescription": "Volem crear un pastís únic, especial i deliciós per a tu.\n\nCada un dels nostres dolços s'elabora de forma completament artesanal, prioritzant ingredients de la millor qualitat i respectant els temps que cada procés necessita per aconseguir un resultat perfecte.",
 		"artisanal": "artesanal",
 		"perfect": "perfecte",
-		"collaborationTitle": "Per assegurar-nos de aconseguir-ho, necessitem la teva col·laboració:",
+		"collaborationTitle": "Per aconseguir-ho, necessitem la teva col·laboració:",
 		"anticipation": {
-			"title": "Anticipació",
-			"description": "Encàrrega el teu pastís amb almenys 48 hores d'anticipació. Això ens permet planificar i dedicar-li el temps que mereix.",
-			"hours": "48 hores d'anticipació"
+			"title": "Antelació",
+			"description": "Fes la teva comanda amb almenys 48 hores d'antelació.\nAixò ens permet planificar i dedicar-li el temps que mereix cada creació.",
+			"hours": "48 hores d'antelació"
 		},
 		"preferences": {
 			"title": "Preferències",
-			"description": "Explica'ns els teus gustos i preferències en fer la comanda. Així evitem sabors que no gaudeixis i cuidem qualsevol al·lèrgia o restricció alimentària.",
+			"description": "Explica'ns els teus gustos i preferències en fer la comanda.\nAixí evitem sabors que no t'agradin i cuidem qualsevol al·lèrgia o restricció alimentària per prevenir contaminació creuada.",
 			"allergies": "al·lèrgia o restricció alimentària"
 		},
 		"inspiration": {
 			"title": "Inspiració",
-			"description": "Pots compartir-nos referències i inspiracions (com imatges de Pinterest), però no fem rèpliques exactes: ens agrada crear alguna cosa única per a tu.",
+			"description": "Pots enviar-nos referències o imatges d'inspiració (per exemple, de Pinterest o altres col·legues), però no fem rèpliques exactes: ens agrada dissenyar alguna cosa veritablement única per a tu.",
 			"noReplicas": "no fem rèpliques exactes"
 		},
 		"decorations": {
 			"title": "Decoracions",
-			"description": "Les nostres cobertures s'elaboren principalment amb buttercream de vainilla. També podem fer-les amb ganache de xocolata.",
-			"buttercream": "buttercream de vainilla"
+			"description": "Les nostres cobertures i decoracions s'elaboren principalment amb buttercream de vainilla. Si ho prefereixes, també podem fer-les amb ganache de xocolata blanc o negre. Tingues en compte que algunes decoracions o preus poden variar."
 		},
 		"closing": {
-			"message": "T'agraïm que ens donis la llibertat creativa per dissenyar alguna cosa que no només es vegi increïble, sinó que també sigui memorable al primer mos."
+			"message": "Gràcies per confiar en la nostra creativitat per elaborar alguna cosa que no només es vegi increïble, sinó que també sigui memorable des del primer mos."
 		}
 	},
 	"products": {
@@ -109,11 +106,11 @@
 		"ingredients": "Ingredients",
 		"allergens": "⚠️ Al·lèrgens",
 		"importantInfo": "💡 Informació Important",
-		"orderAdvance": "Comandes amb 48 hores d'anticipació",
+		"orderAdvance": "Comandes amb 48 hores d'antelació",
 		"buttercream": "buttercream de vainilla",
 		"chocolateGanache": "ganache de xocolata",
 		"noReplicas": "No fem rèpliques exactes",
-		"notAvailable": "⚠️ Aquest producte no està disponible actualment",
+		"notAvailable": "⚠️ No disponible ara",
 		"featured": "⭐ Destacat",
 		"outOfStock": "Esgotat",
 		"containsAllergens": "Conté al·lèrgens"
@@ -130,7 +127,7 @@
 		"catalog": "Catàleg",
 		"downloadPdf": "Descarregar PDF",
 		"contact": "Contacte",
-		"orderAdvanceShort": "Comandes amb 48h d'anticipació",
+		"orderAdvanceShort": "Comandes amb 48 hores d'antelació",
 		"catalogPdf": "Catàleg PDF",
 		"whatsapp": "WhatsApp"
 	}
