@@ -180,19 +180,7 @@ const OurPhilosophy = () => {
 												{t.philosophy.decorations.title}
 											</h4>
 											<p className="text-bendito-text/80 text-sm leading-relaxed">
-												{
-													t.philosophy.decorations.description.split(
-														t.philosophy.decorations.buttercream,
-													)[0]
-												}
-												<span className="font-semibold text-bendito-primary">
-													{t.philosophy.decorations.buttercream}
-												</span>
-												{
-													t.philosophy.decorations.description.split(
-														t.philosophy.decorations.buttercream,
-													)[1]
-												}
+												{t.philosophy.decorations.description}
 											</p>
 										</div>
 									</div>
