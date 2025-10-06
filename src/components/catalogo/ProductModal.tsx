@@ -30,6 +30,8 @@ const ProductModal = ({
 	const [isVisible, setIsVisible] = useState(false);
 	const { addToOrder } = useOrder();
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+	const [isIngredientsExpanded, setIsIngredientsExpanded] = useState(false);
+	const [isAllergensExpanded, setIsAllergensExpanded] = useState(false);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -165,17 +167,20 @@ const ProductModal = ({
 								</h3>
 								{(() => {
 									const full = getTranslatedText(producto.descripcion, lang);
-									const short =
-										full.length > 180 ? full.slice(0, 180) + '…' : full;
+									const lines = full.split('\n');
+									const shouldTruncate = lines.length > 3 || full.length > 200;
+									const short = shouldTruncate
+										? lines.slice(0, 3).join('\n') + '...'
+										: full;
 									return (
 										<>
-											<p className="text-bendito-text/80 leading-relaxed">
+											<p className="text-bendito-text/80 leading-relaxed whitespace-pre-line">
 												{isDescriptionExpanded ? full : short}
 											</p>
-											{full.length > 180 && (
+											{shouldTruncate && (
 												<button
 													onClick={() => setIsDescriptionExpanded((v) => !v)}
-													className="mt-2 text-bendito-primary text-sm font-medium underline underline-offset-4"
+													className="mt-2 text-bendito-primary text-sm font-medium underline underline-offset-4 hover:text-bendito-primary/80 transition-colors"
 												>
 													{isDescriptionExpanded ? 'Ver menos' : 'Ver más'}
 												</button>
@@ -188,42 +193,88 @@ const ProductModal = ({
 							{/* Ingredientes */}
 							{producto.ingredientes && (
 								<div>
-									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-										{t.products.ingredients}
-									</h3>
-									<div className="flex flex-wrap gap-2">
-										{getTranslatedArray(producto.ingredientes, lang).map(
-											(ingrediente, index) => (
-												<span
-													key={index}
-													className="bg-bendito-light text-bendito-text px-3 py-1 rounded-full text-sm"
-												>
-													{ingrediente}
-												</span>
-											),
-										)}
-									</div>
+									<button
+										onClick={() =>
+											setIsIngredientsExpanded(!isIngredientsExpanded)
+										}
+										className="flex items-center justify-between w-full text-left mb-3 group"
+									>
+										<h3 className="text-lg font-semibold text-bendito-text font-display">
+											{t.products.ingredients}
+										</h3>
+										<svg
+											className={`w-5 h-5 text-bendito-primary transition-transform duration-200 ${
+												isIngredientsExpanded ? 'rotate-180' : ''
+											}`}
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={2}
+												d="M19 9l-7 7-7-7"
+											/>
+										</svg>
+									</button>
+									{isIngredientsExpanded && (
+										<div className="flex flex-wrap gap-2">
+											{getTranslatedArray(producto.ingredientes, lang).map(
+												(ingrediente, index) => (
+													<span
+														key={index}
+														className="bg-bendito-light text-bendito-text px-3 py-1 rounded-full text-sm"
+													>
+														{ingrediente}
+													</span>
+												),
+											)}
+										</div>
+									)}
 								</div>
 							)}
 
 							{/* Alérgenos */}
 							{producto.alergenos && (
 								<div>
-									<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
-										{t.products.allergens}
-									</h3>
-									<div className="flex flex-wrap gap-2">
-										{getTranslatedArray(producto.alergenos, lang).map(
-											(alergeno, index) => (
-												<span
-													key={index}
-													className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
-												>
-													{alergeno}
-												</span>
-											),
-										)}
-									</div>
+									<button
+										onClick={() => setIsAllergensExpanded(!isAllergensExpanded)}
+										className="flex items-center justify-between w-full text-left mb-3 group"
+									>
+										<h3 className="text-lg font-semibold text-bendito-text font-display">
+											{t.products.allergens}
+										</h3>
+										<svg
+											className={`w-5 h-5 text-bendito-primary transition-transform duration-200 ${
+												isAllergensExpanded ? 'rotate-180' : ''
+											}`}
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={2}
+												d="M19 9l-7 7-7-7"
+											/>
+										</svg>
+									</button>
+									{isAllergensExpanded && (
+										<div className="flex flex-wrap gap-2">
+											{getTranslatedArray(producto.alergenos, lang).map(
+												(alergeno, index) => (
+													<span
+														key={index}
+														className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium"
+													>
+														{alergeno}
+													</span>
+												),
+											)}
+										</div>
+									)}
 								</div>
 							)}
 
@@ -267,20 +318,44 @@ const ProductModal = ({
 
 							{/* Instrucciones claras para WhatsApp */}
 							<div className="mt-4">
-								<ul className="space-y-2 text-sm text-bendito-text/70">
-									<li className="flex items-center gap-2">
-										<span className="text-green-600">•</span>
-										{t.catalog.modalTiming}
-									</li>
-									<li className="flex items-center gap-2">
-										<span className="text-green-600">•</span>
-										{t.catalog.pickupInfo} 🛍️
-									</li>
-									<li className="flex items-center gap-2">
-										<span className="text-green-600">•</span>
-										{t.catalog.modalMultipleProducts} 💡
-									</li>
-								</ul>
+								<div className="flex flex-col sm:flex-row gap-2 text-sm text-bendito-text/70">
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-4 h-4 text-bendito-primary/60 flex-shrink-0"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+										>
+											<path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z" />
+										</svg>
+										<span className="text-xs sm:text-sm">
+											{t.catalog.modalTiming}
+										</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-4 h-4 text-bendito-secondary/60 flex-shrink-0"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+										>
+											<path d="M7 4V2c0-.6-.4-1-1-1s-1 .4-1 1v2c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2V2c0-.6-.4-1-1-1s-1 .4-1 1v2H7zm12 2H5v14h14V6zm-8 2h2v2h-2V8zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm4-8h2v2h-2V8zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
+										</svg>
+										<span className="text-xs sm:text-sm">
+											{t.catalog.pickupInfo}
+										</span>
+									</div>
+									<div className="flex items-center gap-2">
+										<svg
+											className="w-4 h-4 text-bendito-primary/60 flex-shrink-0"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+										>
+											<path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
+										</svg>
+										<span className="text-xs sm:text-sm">
+											{t.catalog.modalMultipleProducts}
+										</span>
+									</div>
+								</div>
 							</div>
 
 							{/* Estado de disponibilidad */}
