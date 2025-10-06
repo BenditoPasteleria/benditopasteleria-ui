@@ -18,16 +18,16 @@ const CategoryFilter = ({
 	const lang = (params?.lang || 'es') as Locale;
 	const t = getMessages(lang);
 	return (
-		<div className="mb-8">
-			<h3 className="text-lg font-semibold text-bendito-text mb-4 font-display">
+		<div className="mb-4 sm:mb-8">
+			<h3 className="text-base sm:text-lg font-semibold text-bendito-text mb-3 sm:mb-4 font-display">
 				{t.catalog.categories}
 			</h3>
 
-			<div className="flex flex-wrap gap-3">
+			<div className="flex flex-wrap gap-2 sm:gap-3">
 				{/* Botón "Todos" */}
 				<button
 					onClick={() => onCategoriaChange(null)}
-					className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+					className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
 						categoriaActiva === null
 							? 'bg-bendito-primary text-bendito-secondary shadow-lg'
 							: 'bg-white text-bendito-text hover:bg-bendito-light border border-bendito-light'
@@ -41,7 +41,7 @@ const CategoryFilter = ({
 					<button
 						key={categoria.id}
 						onClick={() => onCategoriaChange(categoria.id)}
-						className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+						className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
 							categoriaActiva === categoria.id
 								? 'bg-bendito-primary text-bendito-secondary shadow-lg'
 								: 'bg-white text-bendito-text hover:bg-bendito-light border border-bendito-light'
@@ -52,9 +52,9 @@ const CategoryFilter = ({
 				))}
 			</div>
 
-			{/* Descripción de la categoría activa */}
+			{/* Descripción de la categoría activa - Solo en desktop */}
 			{categoriaActiva && (
-				<div className="mt-4 p-4 bg-bendito-light rounded-lg">
+				<div className="hidden sm:block mt-4 p-4 bg-bendito-light rounded-lg">
 					<p className="text-sm text-bendito-text/80">
 						{getTranslatedText(
 							categorias.find((c) => c.id === categoriaActiva)?.descripcion || {

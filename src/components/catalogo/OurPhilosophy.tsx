@@ -7,6 +7,7 @@ const OurPhilosophy = () => {
 	const lang = params?.lang || 'es';
 	const t = getMessages(lang);
 	const [isExpanded, setIsExpanded] = useState(false);
+
 	return (
 		<div className="card">
 			<div className="text-center mb-6">

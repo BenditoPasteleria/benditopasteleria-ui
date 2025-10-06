@@ -29,6 +29,7 @@ const ProductModal = ({
 	const t = getMessages(lang);
 	const [isVisible, setIsVisible] = useState(false);
 	const { addToOrder } = useOrder();
+	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -162,9 +163,26 @@ const ProductModal = ({
 								<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
 									{t.products.description}
 								</h3>
-								<p className="text-bendito-text/80 leading-relaxed">
-									{getTranslatedText(producto.descripcion, lang)}
-								</p>
+								{(() => {
+									const full = getTranslatedText(producto.descripcion, lang);
+									const short =
+										full.length > 180 ? full.slice(0, 180) + '…' : full;
+									return (
+										<>
+											<p className="text-bendito-text/80 leading-relaxed">
+												{isDescriptionExpanded ? full : short}
+											</p>
+											{full.length > 180 && (
+												<button
+													onClick={() => setIsDescriptionExpanded((v) => !v)}
+													className="mt-2 text-bendito-primary text-sm font-medium underline underline-offset-4"
+												>
+													{isDescriptionExpanded ? 'Ver menos' : 'Ver más'}
+												</button>
+											)}
+										</>
+									);
+								})()}
 							</div>
 
 							{/* Ingredientes */}
@@ -276,6 +294,7 @@ const ProductModal = ({
 						</div>
 					</div>
 				</div>
+				{/* End Content */}
 			</div>
 		</div>
 	);
