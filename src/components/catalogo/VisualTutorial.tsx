@@ -40,7 +40,7 @@ const VisualTutorial = () => {
 			>
 				<div className="flex items-center justify-center gap-2">
 					<span className="font-medium">
-						{isExpanded ? 'Ocultar proceso' : 'Ver cómo pedir'}
+						{isExpanded ? 'Ocultar' : 'Cómo pedir'}
 					</span>
 					<div
 						className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}

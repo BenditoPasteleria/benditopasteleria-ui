@@ -88,7 +88,7 @@ const CatalogoPage = () => {
 				{/* Header Minimalista */}
 				<header className="bg-white/95 backdrop-blur-sm shadow-sm border-b border-bendito-light/30">
 					<div className="w-full px-3 sm:px-4 py-2 sm:py-4">
-						<div className="flex items-center justify-between sm:mx-10 mx-0 min-h-[50px] sm:min-h-[60px]">
+						<div className="flex items-center justify-center sm:mx-10 mx-0 min-h-[50px] sm:min-h-[60px]">
 							<Link
 								href={`/${lang}`}
 								className="hover:opacity-80 transition-opacity flex-shrink-0"
@@ -101,21 +101,14 @@ const CatalogoPage = () => {
 									<Logo variant="minimal" width={50} height={50} />
 								</div>
 							</Link>
-
-							{/* Botón de WhatsApp en desktop */}
-							<div className="hidden md:block">
-								<WhatsAppButton variant="header" />
-							</div>
-
-							<Link
-								href={`/${lang}`}
-								className="text-bendito-text/60 hover:text-bendito-primary font-medium transition-colors text-xs flex-shrink-0 ml-2"
-							>
-								← {t.navigation.backToHomeMobile}
-							</Link>
 						</div>
 					</div>
 				</header>
+
+				{/* Botón WhatsApp flotante solo en desktop */}
+				<div className="hidden md:block fixed bottom-6 left-6 z-50">
+					<WhatsAppButton variant="floating" />
+				</div>
 
 				{/* Contenido Principal - Minimalista */}
 				<main className="max-w-7xl mx-auto px-4 py-3 sm:py-6 pb-20 md:pb-8">
@@ -190,17 +183,17 @@ const CatalogoPage = () => {
 					</div>
 
 					{/* Sección de Contacto Minimalista */}
-					<div className="text-center mb-6 mt-8">
-						<div className="bg-white/50 backdrop-blur-sm rounded-lg p-4 max-w-md mx-auto">
-							<h3 className="text-sm font-semibold text-bendito-text mb-2 font-display">
+					<div className="text-center mb-12 mt-12">
+						<div className="bg-white/50 backdrop-blur-sm rounded-lg p-6 max-w-lg mx-auto">
+							<h3 className="text-base font-semibold text-bendito-text mb-4 font-display">
 								{t.catalog.haveQuestions}
 							</h3>
-							<div className="flex flex-col sm:flex-row gap-2 justify-center">
+							<div className="flex flex-col sm:flex-row gap-3 justify-center">
 								<a
 									href="https://wa.me/674797786"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="btn-primary text-xs sm:text-sm flex items-center justify-center gap-2"
+									className="btn-primary text-sm flex items-center justify-center gap-2"
 								>
 									<span className="w-6 h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
 										<svg
@@ -216,7 +209,7 @@ const CatalogoPage = () => {
 								<a
 									href="/catalogo-bendito.pdf"
 									download="catalogo-bendito-pasteleria.pdf"
-									className="btn-secondary text-xs sm:text-sm flex items-center justify-center gap-2"
+									className="btn-secondary text-sm flex items-center justify-center gap-2"
 								>
 									<span className="w-6 h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
 										<svg
@@ -230,7 +223,7 @@ const CatalogoPage = () => {
 									Catálogo PDF
 								</a>
 							</div>
-							<p className="text-xs text-bendito-text/60 mt-2">
+							<p className="text-sm text-bendito-text/60 mt-4">
 								Carrer de Tavern, 23, Barcelona
 							</p>
 						</div>

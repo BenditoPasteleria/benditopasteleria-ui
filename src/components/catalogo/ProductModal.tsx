@@ -104,7 +104,7 @@ const ProductModal = ({
 				{/* Header */}
 				<div className="sticky top-0 bg-white border-b border-bendito-light px-6 py-4 rounded-t-2xl">
 					<div className="flex items-center justify-between">
-						<h2 className="text-2xl font-bold text-bendito-primary font-display">
+						<h2 className="text-xl font-bold text-bendito-primary font-display">
 							{getTranslatedText(producto.nombre, lang)}
 						</h2>
 						<button
@@ -151,8 +151,8 @@ const ProductModal = ({
 							</div>
 
 							{/* Precio */}
-							<div className="text-center lg:text-left">
-								<span className="text-3xl font-bold text-bendito-primary">
+							<div className="flex justify-end items-end pt-3 border-t border-bendito-light">
+								<span className="text-xl font-bold text-bendito-primary">
 									{formatearPrecio(producto.precio)}
 								</span>
 							</div>
@@ -162,7 +162,7 @@ const ProductModal = ({
 						<div className="space-y-6">
 							{/* Descripción */}
 							<div>
-								<h3 className="text-lg font-semibold text-bendito-text mb-3 font-display">
+								<h3 className="text-base font-semibold text-bendito-text mb-3 font-display">
 									{t.products.description}
 								</h3>
 								{(() => {
@@ -199,7 +199,7 @@ const ProductModal = ({
 										}
 										className="flex items-center justify-between w-full text-left mb-3 group"
 									>
-										<h3 className="text-lg font-semibold text-bendito-text font-display">
+										<h3 className="text-base font-semibold text-bendito-text font-display">
 											{t.products.ingredients}
 										</h3>
 										<svg
@@ -242,7 +242,7 @@ const ProductModal = ({
 										onClick={() => setIsAllergensExpanded(!isAllergensExpanded)}
 										className="flex items-center justify-between w-full text-left mb-3 group"
 									>
-										<h3 className="text-lg font-semibold text-bendito-text font-display">
+										<h3 className="text-base font-semibold text-bendito-text font-display">
 											{t.products.allergens}
 										</h3>
 										<svg
@@ -318,7 +318,7 @@ const ProductModal = ({
 
 							{/* Instrucciones claras para WhatsApp */}
 							<div className="mt-4">
-								<div className="flex flex-col sm:flex-row gap-2 text-sm text-bendito-text/70">
+								<div className="flex flex-col gap-2 text-sm text-bendito-text/70">
 									<div className="flex items-center gap-2">
 										<svg
 											className="w-4 h-4 text-bendito-primary/60 flex-shrink-0"
