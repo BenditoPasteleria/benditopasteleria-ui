@@ -1255,9 +1255,9 @@ export const productos: Producto[] = [
 			en: 'Coconut and dulce de leche square',
 		},
 		descripcion: {
-			es: 'Masa sablée con relleno de manzanas caramelizadas, nueces y canela, cubierto con crumble.',
-			ca: 'Massa sablée amb farcit de pomes caramelitzades, nás i canyella, cobrit amb crumble.',
-			en: 'Sablée dough with filling of caramelized apples, walnuts and cinnamon, covered with crumble.',
+			es: 'Masa sablée con relleno de dulce de leche y cubierta húmeda de coco',
+			ca: 'Massa sablée amb farcit de dolç de llet i cobertura humida de coco',
+			en: 'Sablée dough with dulce de leche filling and moist coconut topping',
 		},
 		precio: 5,
 		categoria: 'cuadrados',
