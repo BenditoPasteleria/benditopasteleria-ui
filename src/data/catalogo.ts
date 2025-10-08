@@ -535,7 +535,7 @@ export const productos: Producto[] = [
 		},
 		precio: 35,
 		categoria: 'postres',
-		imagen: '/images/productos/tarta-frutal.jpg',
+		imagen: '/images/productos/tarta-frutal-07102025.jpg',
 		ingredientes: {
 			es: ['Masa sableé', 'Crema pastelera', 'Frutas de estación'],
 			ca: ['Massa sableé', 'Crema pastelera', "Fruites d'estació"],
@@ -938,7 +938,7 @@ export const productos: Producto[] = [
 		},
 		precio: 5,
 		categoria: 'alfajores',
-		imagen: '/images/productos/alfajor-nuez-chocolate-blanco.jpg',
+		imagen: '/images/productos/alfajor-nuez-chocolate-blanco-07102025.jpg',
 		ingredientes: {
 			es: ['Nuez', 'Chocolate blanco', 'Dulce de leche'],
 			ca: ['Nous', 'Xocolata blanca', 'Dolç de llet'],
@@ -967,7 +967,7 @@ export const productos: Producto[] = [
 		},
 		precio: 5,
 		categoria: 'alfajores',
-		imagen: '/images/productos/alfajor-chocolate-dulce-leche.jpg',
+		imagen: '/images/productos/alfajor-chocolate-dulce-leche-07102025.jpg',
 		ingredientes: {
 			es: ['Dulce de leche', 'Chocolate'],
 			ca: ['Dolç de llet', 'Xocolata'],
