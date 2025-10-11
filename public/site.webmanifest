@@ -1,0 +1,17 @@
+{
+  "name": "Bendito Pastelería",
+  "short_name": "Bendito",
+  "description": "Delicias artesanales de Bendito Pastelería",
+  "icons": [
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#004207",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}

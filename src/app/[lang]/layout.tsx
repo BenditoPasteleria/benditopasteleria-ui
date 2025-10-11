@@ -2,7 +2,7 @@ import '../globals.css';
 import { inter, playfair, firaCode } from '@/lib/fonts';
 import Footer from '@/components/Footer';
 import LanguageSelector from '@/components/LanguageSelector';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 export async function generateStaticParams() {
 	return [{ lang: 'es' }, { lang: 'en' }, { lang: 'ca' }];
@@ -45,6 +45,21 @@ export async function generateMetadata({
 		description: current.description,
 		keywords: current.keywords,
 		authors: [{ name: 'Bendito Pastelería' }],
+		icons: {
+			icon: [
+				{ url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+				{ url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+				{
+					url: '/android-chrome-512x512.png',
+					sizes: '512x512',
+					type: 'image/png',
+				},
+			],
+			apple: [
+				{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+			],
+		},
+		manifest: '/site.webmanifest',
 		openGraph: {
 			title: current.title,
 			description: current.description,
@@ -55,6 +70,12 @@ export async function generateMetadata({
 			index: true,
 			follow: true,
 		},
+	};
+}
+
+export function generateViewport(): Viewport {
+	return {
+		themeColor: '#004207',
 	};
 }
 

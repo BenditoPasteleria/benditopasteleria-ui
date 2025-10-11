@@ -433,7 +433,7 @@ export const productos: Producto[] = [
 		},
 		precio: 35,
 		categoria: 'postres',
-		imagen: '/images/productos/torta-nuez.jpeg',
+		imagen: '/images/productos/torta-nuez-10102025.jpg',
 		ingredientes: {
 			es: [
 				'Masa soufflé de nueces',
