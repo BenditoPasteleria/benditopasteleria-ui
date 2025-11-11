@@ -71,6 +71,21 @@ const Footer = () => {
 						</svg>
 					</a>
 
+					{/* Email */}
+					<a
+						href="mailto:contact@benditopasteleria.com"
+						className="w-12 h-12 bg-bendito-secondary hover:bg-bendito-secondary/90 rounded-full flex items-center justify-center transition-colors"
+						title="Email"
+					>
+						<svg
+							className="w-6 h-6 text-bendito-primary"
+							fill="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+						</svg>
+					</a>
+
 					{/* Ubicación */}
 					<a
 						href="https://maps.google.com/?q=Tavern+23,+08006+Barcelona,+Spain"

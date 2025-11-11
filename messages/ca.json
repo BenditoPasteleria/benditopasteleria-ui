@@ -17,7 +17,7 @@
 	"catalog": {
 		"title": "El Nostre Catàleg",
 		"description": "Descobreix la nostra selecció completa de postres artesanals. Cada producte està fet amb ingredients frescos i molt amor.",
-		"searchPlaceholder": "Cercar productes per nom o descripció...",
+		"searchPlaceholder": "Cercar productes...",
 		"categories": "Categories",
 		"allCategories": "🍰 Tots",
 		"productsFound": "productes trobats",

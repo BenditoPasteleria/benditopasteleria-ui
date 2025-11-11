@@ -17,7 +17,7 @@
 	"catalog": {
 		"title": "Our Catalog",
 		"description": "Discover our complete selection of artisanal desserts. Each product is made with fresh ingredients and lots of love.",
-		"searchPlaceholder": "Search products by name or description...",
+		"searchPlaceholder": "Search products...",
 		"categories": "Categories",
 		"allCategories": "🍰 All",
 		"productsFound": "products found",

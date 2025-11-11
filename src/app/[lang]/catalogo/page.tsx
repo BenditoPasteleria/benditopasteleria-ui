@@ -193,11 +193,11 @@ const CatalogoPage = () => {
 									href="https://wa.me/674797786"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="btn-primary text-sm flex items-center justify-center gap-2"
+									className="btn-primary text-xs sm:text-sm flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3"
 								>
-									<span className="w-6 h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
+									<span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
 										<svg
-											className="w-3.5 h-3.5 text-bendito-primary"
+											className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-bendito-primary"
 											fill="currentColor"
 											viewBox="0 0 24 24"
 										>
@@ -209,18 +209,34 @@ const CatalogoPage = () => {
 								<a
 									href="/catalogo-bendito.pdf"
 									download="catalogo-bendito-pasteleria.pdf"
-									className="btn-secondary text-sm flex items-center justify-center gap-2"
+									className="btn-secondary text-xs sm:text-sm flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3"
 								>
-									<span className="w-6 h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
+									<span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
 										<svg
-											className="w-3.5 h-3.5 text-bendito-primary"
+											className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-bendito-primary"
 											fill="currentColor"
 											viewBox="0 0 24 24"
 										>
 											<path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
 										</svg>
 									</span>
-									Catálogo PDF
+									<span className="whitespace-nowrap">Catálogo PDF</span>
+								</a>
+								{/* Email */}
+								<a
+									href="mailto:contact@benditopasteleria.com"
+									className="btn-secondary text-xs sm:text-sm flex items-center justify-center gap-2 px-3 py-2 sm:px-4 sm:py-3"
+								>
+									<span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-bendito-secondary flex items-center justify-center">
+										<svg
+											className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-bendito-primary"
+											fill="currentColor"
+											viewBox="0 0 24 24"
+										>
+											<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+										</svg>
+									</span>
+									Email
 								</a>
 							</div>
 							<p className="text-sm text-bendito-text/60 mt-4">

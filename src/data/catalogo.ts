@@ -907,7 +907,7 @@ export const productos: Producto[] = [
 			ca: 'Alfajor clàssic farcit de dolç de llet.',
 			en: 'Classic alfajor filled with dulce de leche.',
 		},
-		precio: 4,
+		precio: 4.5,
 		categoria: 'alfajores',
 		imagen: '/images/productos/alfajor-maicena.jpg',
 		ingredientes: {
@@ -985,22 +985,22 @@ export const productos: Producto[] = [
 	{
 		id: 'alfajor-frutos-rojos',
 		nombre: {
-			es: 'Alfajor de frutos rojos, dulce de leche y chocolate blanco',
-			ca: 'Alfajor de fruits vermells, dolç de llet i xocolata blanca',
-			en: 'Red fruits, dulce de leche and white chocolate alfajor',
+			es: 'Alfajor de frambuesas, dulce de leche y chocolate blanco',
+			ca: 'Alfajor de gerds, dolç de llet i xocolata blanca',
+			en: 'Raspberries, dulce de leche and white chocolate alfajor',
 		},
 		descripcion: {
-			es: 'Alfajor de frutos rojos con dulce de leche y chocolate blanco',
-			ca: 'Alfajor de fruits vermells amb dolç de llet i xocolata blanca',
-			en: 'Red fruits alfajor with dulce de leche and white chocolate',
+			es: 'Alfajor de frambuesas con dulce de leche y chocolate blanco',
+			ca: 'Alfajor de gerds amb dolç de llet i xocolata blanca',
+			en: 'Raspberries alfajor with dulce de leche and white chocolate',
 		},
 		precio: 5,
 		categoria: 'alfajores',
 		imagen: '/images/productos/alfajor-frutos-rojos.jpg',
 		ingredientes: {
-			es: ['Frutos rojos', 'Dulce de leche', 'Chocolate blanco'],
-			ca: ['Fruits vermells', 'Dolç de llet', 'Xocolata blanca'],
-			en: ['Red fruits', 'Dulce de leche', 'White chocolate'],
+			es: ['Frambuesas', 'Dulce de leche', 'Chocolate blanco'],
+			ca: ['Gerds', 'Dolç de llet', 'Xocolata blanca'],
+			en: ['Raspberries', 'Dulce de leche', 'White chocolate'],
 		},
 		alergenos: {
 			es: ['Gluten', 'Huevos', 'Lácteos'],
@@ -1319,7 +1319,7 @@ export const productos: Producto[] = [
 			ca: 'Pack de 6 croissants artesanals recén fornejats.',
 			en: 'Pack of 6 freshly baked artisanal croissants.',
 		},
-		precio: 11,
+		precio: 15,
 		categoria: 'medialunas',
 		imagen: '/images/productos/medialunas.jpg',
 		ingredientes: {

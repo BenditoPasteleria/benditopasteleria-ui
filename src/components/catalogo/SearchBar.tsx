@@ -11,9 +11,9 @@ const SearchBar = ({
 }: SearchBarProps) => {
 	return (
 		<div className="relative mb-6">
-			<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+			<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none z-10">
 				<svg
-					className="h-5 w-5 text-bendito-text/50"
+					className="h-5 w-5 text-bendito-text/70"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -27,13 +27,22 @@ const SearchBar = ({
 				</svg>
 			</div>
 
-			<input
-				type="text"
-				value={valor}
-				onChange={(e) => onCambio(e.target.value)}
-				placeholder={placeholder}
-				className="w-full pl-10 pr-4 py-3 border border-bendito-light rounded-lg focus:ring-2 focus:ring-bendito-primary focus:border-bendito-primary transition-all duration-200 bg-white/90 backdrop-blur-sm"
-			/>
+			<div className="relative">
+				<input
+					type="text"
+					value={valor}
+					onChange={(e) => onCambio(e.target.value)}
+					placeholder={placeholder}
+					className="w-full pl-10 pr-4 py-3 border border-bendito-light rounded-lg focus:ring-2 focus:ring-bendito-primary focus:border-bendito-primary transition-all duration-200 bg-white/90 backdrop-blur-sm sm:placeholder:text-bendito-text/50 placeholder:text-transparent"
+				/>
+
+				{/* Cursor parpadeante solo en mobile cuando está vacío */}
+				{valor === '' && (
+					<div className="absolute inset-y-0 left-10 flex items-center pointer-events-none md:hidden">
+						<div className="w-0.5 h-5 bg-bendito-text animate-pulse"></div>
+					</div>
+				)}
+			</div>
 
 			{valor && (
 				<button

@@ -17,7 +17,7 @@
 	"catalog": {
 		"title": "Nuestro Catálogo",
 		"description": "Descubre nuestra selección completa de postres artesanales. Cada producto está hecho con ingredientes frescos y mucho amor.",
-		"searchPlaceholder": "Buscar productos por nombre o descripción...",
+		"searchPlaceholder": "Buscar productos...",
 		"categories": "Categorías",
 		"allCategories": "🍰 Todos",
 		"productsFound": "productos encontrados",
