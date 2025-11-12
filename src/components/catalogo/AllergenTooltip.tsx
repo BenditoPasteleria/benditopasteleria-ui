@@ -14,7 +14,7 @@ const AllergenTooltip = ({ alergenos, lang }: AllergenTooltipProps) => {
 
 	return (
 		<div className="relative inline-block">
-			{/* Trigger button */}
+			{/* Tooltip button */}
 			<button
 				onMouseEnter={() => setIsVisible(true)}
 				onMouseLeave={() => setIsVisible(false)}
