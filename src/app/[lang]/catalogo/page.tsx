@@ -76,6 +76,21 @@ const CatalogoPage = () => {
 		setProductoSeleccionado(null);
 	};
 
+	// Calcular el índice del producto seleccionado en la lista filtrada
+	const currentProductIndex = useMemo(() => {
+		if (!productoSeleccionado) return -1;
+		return productosFiltrados.findIndex(
+			(p) => p.id === productoSeleccionado.id,
+		);
+	}, [productoSeleccionado, productosFiltrados]);
+
+	// Función para cambiar de producto (navegación)
+	const handleProductChange = (newIndex: number) => {
+		if (newIndex >= 0 && newIndex < productosFiltrados.length) {
+			setProductoSeleccionado(productosFiltrados[newIndex]);
+		}
+	};
+
 	return (
 		<OrderProvider>
 			<div className="min-h-screen gradient-bg">
@@ -249,8 +264,11 @@ const CatalogoPage = () => {
 				{/* Modal de Detalles del Producto */}
 				<ProductModal
 					producto={productoSeleccionado}
+					products={productosFiltrados}
+					currentIndex={currentProductIndex}
 					isOpen={!!productoSeleccionado}
 					onClose={handleCerrarModal}
+					onProductChange={handleProductChange}
 					onHacerPedido={handleHacerPedido}
 				/>
 

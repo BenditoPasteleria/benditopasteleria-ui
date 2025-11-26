@@ -13,39 +13,76 @@ import { useOrder } from '@/lib/OrderContext';
 
 interface ProductModalProps {
 	producto: Producto | null;
+	products: Producto[];
+	currentIndex: number;
 	isOpen: boolean;
 	onClose: () => void;
+	onProductChange: (newIndex: number) => void;
 	onHacerPedido?: (producto: Producto) => void;
 }
 
 const ProductModal = ({
 	producto,
+	products,
+	currentIndex,
 	isOpen,
 	onClose,
+	onProductChange,
 	onHacerPedido,
 }: ProductModalProps) => {
 	const params = useParams<{ lang: string }>();
 	const lang = (params?.lang || 'es') as Locale;
 	const t = getMessages(lang);
 	const [isVisible, setIsVisible] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
 	const { addToOrder } = useOrder();
 	const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 	const [isIngredientsExpanded, setIsIngredientsExpanded] = useState(false);
 	const [isAllergensExpanded, setIsAllergensExpanded] = useState(false);
 
+	// Estados para detección de swipe
+	const [touchStart, setTouchStart] = useState<number | null>(null);
+	const [touchEnd, setTouchEnd] = useState<number | null>(null);
+	const [isTransitioning, setIsTransitioning] = useState(false);
+	const [isImageLoading, setIsImageLoading] = useState(true);
+
+	// Umbral mínimo para considerar un swipe válido (en píxeles)
+	const minSwipeDistance = 50;
+
+	// Asegurar que solo ejecutamos código del cliente después de la hidratación
 	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	useEffect(() => {
+		if (!isMounted) return;
+
 		if (isOpen) {
 			setIsVisible(true);
+			// Guardar el valor original del overflow
+			const originalOverflow = document.body.style.overflow;
 			document.body.style.overflow = 'hidden';
+			// Resetear estados de expansión al cambiar de producto
+			setIsDescriptionExpanded(false);
+			setIsIngredientsExpanded(false);
+			setIsAllergensExpanded(false);
+			// Marcar imagen como cargando cuando cambia el producto
+			setIsImageLoading(true);
+
+			return () => {
+				// Restaurar el valor original
+				document.body.style.overflow = originalOverflow;
+			};
 		} else {
 			setIsVisible(false);
-			document.body.style.overflow = 'unset';
+			document.body.style.overflow = '';
 		}
+	}, [isOpen, producto?.id, isMounted]);
 
-		return () => {
-			document.body.style.overflow = 'unset';
-		};
-	}, [isOpen]);
+	// Handler para cuando la imagen termine de cargar
+	const handleImageLoad = useCallback(() => {
+		setIsImageLoading(false);
+	}, []);
 
 	const handleBackdropClick = (e: React.MouseEvent) => {
 		if (e.target === e.currentTarget) {
@@ -53,21 +90,81 @@ const ProductModal = ({
 		}
 	};
 
+	// Función para navegar a un producto específico con transición
+	const handleNavigateToProduct = useCallback(
+		(newIndex: number) => {
+			if (newIndex >= 0 && newIndex < products.length && !isTransitioning) {
+				// Ocultar imagen inmediatamente y comenzar transición
+				setIsImageLoading(true);
+				setIsTransitioning(true);
+				// Pequeño delay para permitir la transición visual
+				setTimeout(() => {
+					onProductChange(newIndex);
+					setIsTransitioning(false);
+					// La imagen se mostrará cuando onLoad se dispare
+				}, 150);
+			}
+		},
+		[products.length, onProductChange, isTransitioning],
+	);
+
 	const handleKeyDown = useCallback(
 		(e: KeyboardEvent) => {
 			if (e.key === 'Escape') {
 				onClose();
+			} else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+				e.preventDefault();
+				handleNavigateToProduct(currentIndex - 1);
+			} else if (e.key === 'ArrowRight' && currentIndex < products.length - 1) {
+				e.preventDefault();
+				handleNavigateToProduct(currentIndex + 1);
 			}
 		},
-		[onClose],
+		[onClose, currentIndex, products.length, handleNavigateToProduct],
 	);
 
-	useEffect(() => {
-		if (isOpen) {
-			document.addEventListener('keydown', handleKeyDown);
-			return () => document.removeEventListener('keydown', handleKeyDown);
+	// Handlers para detección de swipe
+	const onTouchStart = useCallback((e: React.TouchEvent) => {
+		setTouchEnd(null);
+		setTouchStart(e.targetTouches[0].clientX);
+	}, []);
+
+	const onTouchMove = useCallback((e: React.TouchEvent) => {
+		setTouchEnd(e.targetTouches[0].clientX);
+	}, []);
+
+	const onTouchEnd = useCallback(() => {
+		if (!touchStart || !touchEnd) return;
+
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > minSwipeDistance;
+		const isRightSwipe = distance < -minSwipeDistance;
+
+		if (isLeftSwipe && currentIndex < products.length - 1) {
+			// Swipe izquierda: siguiente producto
+			handleNavigateToProduct(currentIndex + 1);
+		} else if (isRightSwipe && currentIndex > 0) {
+			// Swipe derecha: producto anterior
+			handleNavigateToProduct(currentIndex - 1);
 		}
-	}, [isOpen, handleKeyDown]);
+
+		// Resetear valores
+		setTouchStart(null);
+		setTouchEnd(null);
+	}, [
+		touchStart,
+		touchEnd,
+		currentIndex,
+		products.length,
+		handleNavigateToProduct,
+	]);
+
+	useEffect(() => {
+		if (!isMounted || !isOpen) return;
+
+		document.addEventListener('keydown', handleKeyDown);
+		return () => document.removeEventListener('keydown', handleKeyDown);
+	}, [isOpen, handleKeyDown, isMounted]);
 
 	const formatearPrecio = (precio: number) => {
 		return new Intl.NumberFormat('es-ES', {
@@ -99,17 +196,27 @@ const ProductModal = ({
 			<div
 				className={`relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-300 ${
 					isVisible ? 'scale-100' : 'scale-95'
-				}`}
+				} ${isTransitioning ? 'opacity-70' : 'opacity-100'}`}
+				onTouchStart={onTouchStart}
+				onTouchMove={onTouchMove}
+				onTouchEnd={onTouchEnd}
 			>
 				{/* Header */}
-				<div className="sticky top-0 bg-white border-b border-bendito-light px-6 py-4 rounded-t-2xl">
+				<div className="sticky top-0 bg-white border-b border-bendito-light px-6 py-4 rounded-t-2xl z-10">
 					<div className="flex items-center justify-between">
-						<h2 className="text-xl font-bold text-bendito-primary font-display">
-							{getTranslatedText(producto.nombre, lang)}
-						</h2>
+						<div className="flex-1 min-w-0">
+							<h2 className="text-xl font-bold text-bendito-primary font-display truncate">
+								{getTranslatedText(producto.nombre, lang)}
+							</h2>
+							{products.length > 1 && currentIndex >= 0 && (
+								<p className="text-xs text-bendito-text/60 mt-1">
+									Producto {currentIndex + 1} de {products.length}
+								</p>
+							)}
+						</div>
 						<button
 							onClick={onClose}
-							className="p-2 hover:bg-bendito-light rounded-full transition-colors"
+							className="p-2 hover:bg-bendito-light rounded-full transition-colors flex-shrink-0 ml-4"
 						>
 							<svg
 								className="w-6 h-6 text-bendito-text"
@@ -129,22 +236,52 @@ const ProductModal = ({
 				</div>
 
 				{/* Content */}
-				<div className="p-6">
+				<div
+					className={`p-6 transition-opacity duration-150 ${
+						isTransitioning ? 'opacity-50' : 'opacity-100'
+					}`}
+				>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 						{/* Imagen */}
 						<div className="space-y-4">
-							<div className="relative h-48 sm:h-64 lg:h-80 rounded-xl overflow-hidden">
+							<div className="relative h-48 sm:h-64 lg:h-80 rounded-xl overflow-hidden bg-bendito-light">
+								{/* Placeholder/Skeleton mientras carga */}
+								{(isImageLoading || isTransitioning) && (
+									<div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-bendito-light to-bendito-light/50 animate-pulse">
+										<svg
+											className="w-16 h-16 text-bendito-primary/30"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth={1.5}
+												d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+											/>
+										</svg>
+									</div>
+								)}
+								{/* Imagen del producto */}
 								<Image
+									key={producto.id}
 									src={producto.imagen}
 									alt={getTranslatedText(producto.nombre, lang)}
 									fill
-									className="object-cover"
+									className={`object-cover transition-opacity duration-300 ${
+										isImageLoading || isTransitioning
+											? 'opacity-0'
+											: 'opacity-100'
+									}`}
 									sizes="(max-width: 640px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
 									priority={true}
 									quality={90}
+									onLoad={handleImageLoad}
+									onError={() => setIsImageLoading(false)}
 								/>
 								{producto.destacado && (
-									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+									<div className="absolute top-4 right-4 bg-bendito-secondary text-white px-3 py-1 rounded-full text-sm font-semibold z-10">
 										{t.products.featured}
 									</div>
 								)}
